@@ -1,0 +1,139 @@
+@prefix : <https://purl.org/fresh/FReSH_OnTO#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix eur: <http://data.europa.eu/8mn/euroscivoc/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix tfo: <https://purl.org/fresh/Termino_FReSH_OnTO#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix mesh: <http://id.nlm.nih.gov/mesh/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix term: <https://purl.org/fresh/terminologies/> .
+@prefix fresh: <https://purl.org/fresh/FReSH_OnTO#> .
+@prefix vocab: <https://portail-fresh.fr/vocab/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <https://purl.org/fresh/FReSH_OnTO> .
+
+<https://purl.org/fresh/FReSH_OnTO> rdf:type owl:Ontology ;
+                                     owl:imports <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Schema.ttl> ,
+                                                 <http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl> ,
+                                                 <https://purl.org/fresh/Termino_FReSH_OnTO> ;
+                                     dcterms:contributor "andrea.blivet" ;
+                                     dcterms:created "2026-07-24"^^xsd:date ;
+                                     dcterms:creator <https://purl.org/fresh/> ;
+                                     dcterms:description "Représentation ontologique du schéma de métadonnées FReSH"@fr ;
+                                     dcterms:license <https://creativecommons.org/licenses/by-nc-sa/4.0/> ;
+                                     dcterms:title "FReSH_OnTO" ;
+                                     <http://schema.org/image> "https://raw.githubusercontent.com/portail-fresh/technical-documentation/refs/heads/main/site/assets/logocouleur.jpg" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/contributor
+dcterms:contributor rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+dcterms:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dcterms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+dcterms:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/identifier
+dcterms:identifier rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+dcterms:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+dcterms:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/pav/createdOn
+pav:createdOn rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/pav/lastUpdatedOn
+pav:lastUpdatedOn rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/image
+<http://schema.org/image> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#broadMatch
+skos:broadMatch rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#closeMatch
+skos:closeMatch rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#exactMatch
+skos:exactMatch rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#narrowMatch
+skos:narrowMatch rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+skos:prefLabel rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#relatedMatch
+skos:relatedMatch rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/logo
+<http://xmlns.com/foaf/0.1/logo> rdf:type owl:AnnotationProperty .
+
+
+###  https://purl.org/fresh/metadataConcerned
+<https://purl.org/fresh/metadataConcerned> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  https://purl.org/fresh/FReSH_OnTO#section
+fresh:section rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://purl.org/fresh/FReSH_OnTO#hasValue
+fresh:hasValue rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://purl.org/fresh/FReSH_OnTO#hasDatatype
+fresh:hasDatatype rdf:type owl:DatatypeProperty .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
