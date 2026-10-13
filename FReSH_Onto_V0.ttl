@@ -134,6 +134,2420 @@ fresh:hasValue rdf:type owl:ObjectProperty .
 
 ###  https://purl.org/fresh/FReSH_OnTO#hasDatatype
 fresh:hasDatatype rdf:type owl:DatatypeProperty .
+fresh:section rdf:type rdfs:Datatype .
 
+fresh:hasValue rdf:type owl:ObjectProperty .
+
+fresh:hasDatatype rdf:type owl:DatatypeProperty .
+
+
+fresh:TechnicalInfo rdf:type owl:Class;
+                        dc:identifier "S-001"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:FreshSchema
+
+;                    dc:title "Métadonnées techniques de la fiche"@fr, "Technical metadata "@en.
+fresh:StudyID rdf:type owl:Class;
+                        dc:identifier "S-002"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:TechnicalInfo
+
+;                    dc:title "Identifiant de l'étude"@fr, "Study ID"@en;
+                    dc:description "Section contenant l'identifiant  provenant de la source des métadonnées importées"@fr, "Section containing the identifier  from the source of the imported metadata"@en.
+fresh:Identifier rdf:type owl:Class;
+                        dc:identifier "E-001"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:StudyID
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Code de l'identifiant "@fr, "Study ID code"@en;
+                    dc:description "Valeur de l'identifiant"@fr, "Identifier value"@en.
+fresh:IDSchema rdf:type owl:Class;
+                        dc:identifier "E-002"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:StudyID
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Source de l'identifiant"@fr, "Study ID source"@en;
+                    dc:description "Nom de la source "@fr, "Source name "@en.
+fresh:Provenance rdf:type owl:Class;
+                        dc:identifier "E-003"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:TechnicalInfo
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:Provenance];
+                            
+;                    dc:title "Provenance"@fr, "Provenance"@en;
+                    dc:description "Indique la source de provenance des métadonnées"@fr, "Indicates the source of the metadata"@en.
+fresh:VersionLang rdf:type owl:Class;
+                        dc:identifier "E-004"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:TechnicalInfo
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:Language];
+                            
+;                    dc:title "Langue de la version"@fr, "Version language"@en;
+                    dc:description "Langue de la version actuelle de la fiche"@fr, "Language of the current version of the record"@en.
+fresh:OriginLang rdf:type owl:Class;
+                        dc:identifier "E-005"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:TechnicalInfo
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:Language];
+                            
+;                    dc:title "Langue d'origine"@fr, "Original language"@en;
+                    dc:description "Langue de la fiche d'origine"@fr, "Language of the original record"@en.
+fresh:CreationDate rdf:type owl:Class;
+                        dc:identifier "E-006"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:TechnicalInfo
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:nan];
+                            
+;                    dc:title "Date du 1er enregistrement"@fr, "First record date"@en;
+                    dc:description "Indique la date à laquelle la fiche a été enregistrée pour la première fois dans le catalogue FReSH"@fr, "Indicates the date on which the record was first registered in the FReSH catalogue"@en.
+fresh:LastUpdatedAuto rdf:type owl:Class;
+                        dc:identifier "E-007"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:TechnicalInfo
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:nan];
+                            
+;                    dc:title "Date de la dernière MAJ automatique"@fr, "Last automatic update date"@en;
+                    dc:description "Indique la date de la dernière mise à jour automatique (import) de la fiche"@fr, "Indicates the date of the last automatic update (import) of the record"@en.
+fresh:LastUpdatedManual rdf:type owl:Class;
+                        dc:identifier "E-008"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:TechnicalInfo
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:nan];
+                            
+;                    dc:title "Date de la dernière MAJ manuelle"@fr, "Last manual update date"@en;
+                    dc:description "Indique la date de la dernière mise à jour manuelle de la fiche"@fr, "Indicates the date of the last manual update of the record"@en.
+fresh:RespValidation rdf:type owl:Class;
+                        dc:identifier "E-009"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:TechnicalInfo
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:boolean];
+                            
+;                    dc:title "Complétion/validation par le responsable"@fr, "Completion/validation by the responsible person"@en;
+                    dc:description "Indique si la fiche a été validée par le responsable scientifique de l'étude"@fr, "Indicates whether the record has been validated by the study's principal investigator"@en.
+fresh:AutoTranslation rdf:type owl:Class;
+                        dc:identifier "E-010"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:TechnicalInfo
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:boolean];
+                            
+;                    dc:title "Traduction automatique"@fr, "Automatic translation"@en;
+                    dc:description "Indique si la fiche a été traduite automatiquement"@fr, "Indicates whether the record has been automatically translated"@en.
+fresh:Status rdf:type owl:Class;
+                        dc:identifier "E-011"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:TechnicalInfo
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:Status];
+                            
+;                    dc:title "Statut"@fr, "Status"@en;
+                    dc:description "Statut actuel de la fiche des métadonnées dans le catalogue"@fr, "Current status of the metadata record in the catalogue"@en.
+fresh:MetadataContributor rdf:type owl:Class;
+                        dc:identifier "S-004"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:TechnicalInfo
+
+;                    dc:title "Contributeur de la fiche de métadonnées"@fr, "Metadata Contributor"@en;
+                    dc:description "Personne ou organisation chargée de renseigner les informations d’une étude dans le catalogue FReSH en complétant le formulaire en ligne"@fr, "Person or organization responsible for submitting study information to the FReSH catalogue by completing the online form"@en.
+fresh:ContributorName rdf:type owl:Class;
+                        dc:identifier "E-014"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:MetadataContributor
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Prénom NOM"@fr, "Last name – First name"@en;
+                    dc:description "Nom et prénom de la personne qui renseigne la fiche des métadonnées"@fr, "Full name of the person entering the metadata record"@en.
+fresh:ContributorAffiliation rdf:type owl:Class;
+                        dc:identifier "E-015"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:MetadataContributor
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Affiliation"@fr, "Affiliation"@en;
+                    dc:description "Affiliation de la personne qui renseigne la fiche des métadonnées"@fr, "Affiliation of the person entering the metadata record"@en.
+fresh:StudyRelatedInfo rdf:type owl:Class;
+                        dc:identifier "S-064"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:FreshSchema
+
+;                    dc:title "Informations relatives à l'étude"@fr, "Study related informations"@en.
+fresh:StudyOverview rdf:type owl:Class;
+                        dc:identifier "S-063"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:StudyRelatedInfo
+
+;                    dc:title "Présentation de l'étude"@fr, "Study overview"@en.
+fresh:Title rdf:type owl:Class;
+                        dc:identifier "E-016"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:StudyOverview
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Titre de l'étude"@fr, "Study title"@en.
+fresh:Acronym rdf:type owl:Class;
+                        dc:identifier "E-017"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:StudyOverview
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Acronyme de l'étude"@fr, "Study acronym"@en.
+fresh:StudyStatus rdf:type owl:Class;
+                        dc:identifier "E-051"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:StudyOverview
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:StudyStatus];
+                            
+;                    dc:title "Statut actuel de l'étude"@fr, "Current study status"@en;
+                    dc:description "Indique le statut actuel de l'étude"@fr, "Indicates the current status of the study"@en.
+fresh:Purpose rdf:type owl:Class;
+                        dc:identifier "E-052"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:StudyOverview
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Objectifs de l'étude"@fr, "Study objectives"@en.
+fresh:Summary rdf:type owl:Class;
+                        dc:identifier "E-053"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:StudyOverview
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Résumé de l'étude"@fr, "Study summary"@en.
+fresh:Keyword rdf:type owl:Class;
+                        dc:identifier "E-056"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:StudyOverview
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:allValuesFrom xsd:string]
+                            
+;                    dc:title "Mots-clés libres (A séparer par un point-virgule)"@fr, "Free keywords (To separate by a semicolon)"@en.
+fresh:Theme rdf:type owl:Class;
+                        dc:identifier "S-028"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:StudyRelatedInfo
+
+;                    dc:title "Thématique"@fr, "Theme"@en;
+                    dc:description "Section dédiée aux aspects thématiques de l’étude"@fr, "Section dedicated to the thematic aspects of the study"@en.
+fresh:IsHealthTheme rdf:type owl:Class;
+                        dc:identifier "E-169"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Theme
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:boolean];
+                            
+;                    dc:title "L'étude porte-t-elle sur une ou plusieurs spécialité(s) médicale(s) ?"@fr, "Does the study cover one or more medical speciality(ies)?"@en.
+fresh:HealthTheme rdf:type owl:Class;
+                        dc:identifier "E-054"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Theme
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:allValuesFrom tfo:HealthTheme]
+                            
+;                    dc:title "Spécialité(s) médicale(s) concernée(s)"@fr, "Medical speciality(ies) concerned"@en;
+                    dc:description "Spécialités médicales auxquelles se rapporte l'étude"@fr, "Medical specialties covered by the study"@en.
+fresh:OtherHealthTheme rdf:type owl:Class;
+                        dc:identifier "E-186"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Theme
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Autre spécialité médicale, précisions"@fr, "Other medical specialty, details"@en.
+fresh:HealthDeterminant rdf:type owl:Class;
+                        dc:identifier "E-057"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Theme
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:allValuesFrom tfo:HealthDeterminant]
+                            
+;                    dc:title "Déterminants de santé"@fr, "Health determinants"@en;
+                    dc:description "Facteurs personnels, sociaux, économiques et environnementaux qui déterminent l’état de santé des individus ou des populations."@fr, "Personal, social, economic, and environmental factors that determine the health status of individuals or populations."@en.
+fresh:OtherSocioDemoDeterminant rdf:type owl:Class;
+                        dc:identifier "E-172"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Theme
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Autres déterminants socio-démographiques et économiques, précisions"@fr, "Other socio-demographic and economic determinants, details"@en.
+fresh:OtherEnvironmentalDeterminant rdf:type owl:Class;
+                        dc:identifier "E-173"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Theme
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Autres déterminants environnementaux, précisions"@fr, "Other environmental determinants, details"@en.
+fresh:OtherHealthcareSystemDeterminant rdf:type owl:Class;
+                        dc:identifier "nan"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Theme
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Autres déterminants liés au système de santé, précisions"@fr, "Other healthcare system determinants, details"@en.
+fresh:OtherBehavioralDeterminant rdf:type owl:Class;
+                        dc:identifier "E-175"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Theme
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Autres déterminants comportementaux, précisions"@fr, "Other behavioral determinants, details"@en.
+fresh:OtherBiologicalDeterminant rdf:type owl:Class;
+                        dc:identifier "E-176"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Theme
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Autres déterminants biologiques, précisions"@fr, "Other biological determinants, details"@en.
+fresh:OtherDeterminant rdf:type owl:Class;
+                        dc:identifier "E-177"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Theme
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Autres déterminants, précisions"@fr, "Other determinants, details"@en.
+fresh:Pathology rdf:type owl:Class;
+                        dc:identifier "E-055"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Theme
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:allValuesFrom tfo:ICD11]
+                            
+;                    dc:title "Pathologie(s), affection(s) ou diagnostic(s) ciblé(s) par l’étude"@fr, "Pathology(ies), condition(s) or diagnose(s) targeted by the study"@en;
+                    dc:description "Pathologies, affections ou diagnostics qui constituent l’objet principal de la recherche."@fr, "Pathology, condition, or diagnosis that constitutes the main focus of the research."@en.
+fresh:RareDiseases rdf:type owl:Class;
+                        dc:identifier "E-059"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Theme
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:boolean];
+                            
+;                    dc:title "L'étude porte-t-elle sur une ou plusieurs maladie(s) rare(s) ? "@fr, "Does the study cover one or more rare disease(s)?"@en.
+fresh:Population rdf:type owl:Class;
+                        dc:identifier "S-046"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:StudyRelatedInfo
+
+;                    dc:title "Population de l'étude"@fr, "Study population"@en;
+                    dc:description "La catégorie ou groupe de personnes qui font l'objet de la recherche."@fr, "The category or groupe of persons targeted by the research."@en.
+fresh:PopulationType rdf:type owl:Class;
+                        dc:identifier "E-106"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Population
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:PopulationType];
+                            
+;                    dc:title "Type de population"@fr, "Population type"@en;
+                    dc:description "Catégorie principale des personnes concernées par l’étude (population générale, patients, personnes en situation de handicap)."@fr, "Main category of persons concerned by the study (general population, patients, persons with disabilities)."@en.
+fresh:OtherPopulationType rdf:type owl:Class;
+                        dc:identifier "E-107"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Population
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Autre type de population, précisions"@fr, "Other population type, details"@en;
+                    dc:description "Indique la catégorie de population étudiée lorsqu’elle ne correspond pas aux options proposées"@fr, "Indicates the population category studied when it does not correspond to the options provided."@en.
+fresh:DemographicInfo rdf:type owl:Class;
+                        dc:identifier "S-047"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Population
+
+;                    dc:title "Caractéristiques démographiques"@fr, "Demographic characteristics"@en;
+                    dc:description "Attributs démographiques qui caractérisent les participants de l'étude"@fr, "Demographic attributes that characterise study participants"@en.
+fresh:Sex rdf:type owl:Class;
+                        dc:identifier "E-108"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DemographicInfo
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:someValuesFrom tfo:Sex]
+                            
+;                    dc:title "Sexe"@fr, "Sex"@en;
+                    dc:description "Un type de critère d'éligibilité qui indique le sexe,  basé sur des distinctions biologiques, des personnes pouvant participer à une étude. "@fr, "A type of eligibility criterion that indicates the sex, based on biological distinctions, of individuals who may participate in a study."@en.
+fresh:Age rdf:type owl:Class;
+                        dc:identifier "E-109"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DemographicInfo
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:someValuesFrom tfo:Age]
+                            
+;                    dc:title "Age"@fr, "Age"@en;
+                    dc:description "Un type de critère d'éligibilité qui indique la tranche d'âge d'une personne pouvant participer à une étude."@fr, "A type of eligibility criteria that indicates the age groupe of a person to participate in a study."@en.
+fresh:OtherClusion rdf:type owl:Class;
+                        dc:identifier "S-048"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Population
+
+;                    dc:title "Autres critères d'éligibilité"@fr, "Other eligibility criteria"@en;
+                    dc:description "Autres exigences clés auxquelles les participants à une étude doivent satisfaire ou caractéristiques qu'ils doivent posséder. Les critères d'éligibilité comprennent à la fois les critères d'inclusion (qui sont requis pour qu'une personne puisse participer à l'étude) et les critères d'exclusion (qui empêchent une personne de participer)."@fr, "Other key requirements that participants in a study must meet or the characteristics they must have. Eligibility criteria consist of both inclusion criteria (which are required for a person to participate in the study) and exclusion criteria (which prevent a person from participating). "@en.
+fresh:InclusionCriterion rdf:type owl:Class;
+                        dc:identifier "E-110"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:OtherClusion
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Critères d'inclusion"@fr, "Inclusion criteria"@en;
+                    dc:description "Conditions que doivent remplir les personnes pour pouvoir participer à l’étude."@fr, "Conditions that individuals must meet in order to participate in the study."@en.
+fresh:ExclusionCriterion rdf:type owl:Class;
+                        dc:identifier "E-111"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:OtherClusion
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Critères d'exclusion"@fr, "Exclusion criteria"@en;
+                    dc:description "Caractéristiques qui rendent une personne non éligible à participer à l’étude, même si elle répond aux critères d’inclusion."@fr, "Characteristics that make a person ineligible to participate in the study, even if they meet the inclusion criteria."@en.
+fresh:GeographicalCoverage rdf:type owl:Class;
+                        dc:identifier "S-049"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Population
+
+;                    dc:title "Champ géographique"@fr, "Geographical coverage"@en;
+                    dc:description "Aire géographique couverte par la population étudiée."@fr, "Geographical area covered by the population studied."@en.
+fresh:Nation rdf:type owl:Class;
+                        dc:identifier "E-112"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:GeographicalCoverage
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:someValuesFrom tfo:ISO3166DefinedCountry]
+                            
+;                    dc:title "Pays concerné(s) "@fr, "Country(ies) concerned"@en;
+                    dc:description "Pays concernés par l'étude"@fr, "Countries covered by the study"@en.
+fresh:FranceRegion rdf:type owl:Class;
+                        dc:identifier "E-113"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:GeographicalCoverage
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:allValuesFrom tfo:FranceRegions]
+                            
+;                    dc:title "Région(s) française(s) concernée(s)"@fr, "French region(s) concerned"@en;
+                    dc:description "Régions françaises couvertes par l'étude"@fr, "French regions covered by the study"@en.
+fresh:GeoDetail rdf:type owl:Class;
+                        dc:identifier "E-114"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:GeographicalCoverage
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Champ géographique, précisions"@fr, "Geographical coverage, details"@en;
+                    dc:description "Précisions sur le périmètre géographique concerné par l'étude"@fr, "Details on the geographical scope covered by the study"@en.
+fresh:AdministrativeInformation rdf:type owl:Class;
+                        dc:identifier "S-006"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:FreshSchema
+
+;                    dc:title "Renseignements administratifs"@fr, "Administrative information"@en.
+fresh:RegulatoryRequirements rdf:type owl:Class;
+                        dc:identifier "S-008"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:AdministrativeInformation
+
+;                    dc:title "Pré-requis réglementaires"@fr, "Regulatory requirements"@en;
+                    dc:description "Cette section rassemble les informations relatives aux procédures réglementaires encadrant la mise en place de la recherche"@fr, "This section contains information on the regulatory procedures involved in setting up  the study"@en.
+fresh:ObtainedAuthorization rdf:type owl:Class;
+                        dc:identifier "S-009"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:RegulatoryRequirements
+
+;                    dc:title "Autorisation(s) ou avi(s) obtenu(s)"@fr, "Authorisation(s) or approval(s) obtained"@en;
+                    dc:description "Cette section indique quelles autorisations réglementaires ou avis éthiques ont été obtenus pour la recherche."@fr, "This section indicates which regulatory approvals or ethical approvals have been obtained for the research."@en.
+fresh:AuthorizingAgency rdf:type owl:Class;
+                        dc:identifier "E-018"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:ObtainedAuthorization
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:AutorisationAgency];
+                            
+;                    dc:title "Autorité compétente ayant délivré l'autorisation ou l'avis de validité de l'étude"@fr, "Competent authority that issued the authorisation or notice of validity for the study"@en.
+fresh:OtherAuthorizingAgency rdf:type owl:Class;
+                        dc:identifier "E-019"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:ObtainedAuthorization
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Autre autorité compétente, précisions"@fr, "Other competent authority, details"@en;
+                    dc:description "Si l'instance n'est pas dans la liste, spécifier"@fr, "Other authorities not included in the list"@en.
+fresh:IsContributorPI rdf:type owl:Class;
+                        dc:identifier "E-152"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:AdministrativeInformation
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:boolean];
+                            
+;                    dc:title "Etes-vous l'investigateur principal (PI) de l'étude ?"@fr, "Are you the Principal Investigator (PI) of the study ?"@en.
+fresh:PrimaryInvestigator rdf:type owl:Class;
+                        dc:identifier "S-010"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:AdministrativeInformation
+
+;                    dc:title "Investigateur principal"@fr, "Principal investigator"@en;
+                    dc:description "Cette section contient les informations concernant l'investigateur principal de l'étude"@fr, "This section contains information about the principal investigator of the study."@en.
+fresh:PIName rdf:type owl:Class;
+                        dc:identifier "E-021"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:PrimaryInvestigator
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Prénom NOM de l'investigateur principal"@fr, "First name LAST NAME of the principal investigator"@en.
+fresh:PIMail rdf:type owl:Class;
+                        dc:identifier "E-197"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:PrimaryInvestigator
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Email de l'investigateur principal"@fr, "Principal investigator's email"@en.
+fresh:PIORCID rdf:type owl:Class;
+                        dc:identifier "E-158"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:PrimaryInvestigator
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "ORCID de l'investigateur principal"@fr, "Principal investigator's ORCID"@en.
+fresh:PIIdRef rdf:type owl:Class;
+                        dc:identifier "E-159"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:PrimaryInvestigator
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Identifiant IdRef"@fr, "IdRef Identifier"@en.
+fresh:PIAffiliation rdf:type owl:Class;
+                        dc:identifier "S-069"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:PrimaryInvestigator
+
+;                    dc:title "Affiliation(s) de l'investigateur principal"@fr, "Principal investigator affiliation(s)"@en;
+                    dc:description "Section identifiant l'organisation ou l'institution d'appartenance de l'investigateur principal"@fr, "nan"@en.
+fresh:OrganisationName rdf:type owl:Class;
+                        dc:identifier "E-024"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:PIAffiliation
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Nom de l'organisation d'affiliation principale"@fr, "Main affiliated organisation name"@en;
+                    dc:description "Nom de l'organisation d'affiliation "@fr, "Affiliated institution name"@en.
+fresh:OrganisationPID rdf:type owl:Class;
+                        dc:identifier "S-013"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:PIAffiliation
+
+;                    dc:title "Identification de l'organisation d'affiliation principale"@fr, "Main affiliated organisation identification"@en;
+                    dc:description "Identifiant de l’organisation d’affiliation"@fr, "Affiliated organisation identifier"@en.
+fresh:PIDSchema rdf:type owl:Class;
+                        dc:identifier "E-022"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:OrganisationPID
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:PIDSchema];
+                            
+;                    dc:title "Type d'identifiant de l'organisation d'affiliation principale"@fr, "Main affiliated organisation identifier type"@en;
+                    dc:description "Type d'identifiant d'organisation d'affiliation"@fr, "Affiliated organisation identifier type"@en.
+fresh:URI rdf:type owl:Class;
+                        dc:identifier "E-023"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:OrganisationPID
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Identifiant de l’organisation d’affiliation principale"@fr, "Main affiliated organisation identifier"@en.
+fresh:PILabo rdf:type owl:Class;
+                        dc:identifier "E-160"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:PIAffiliation
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Affiliation(s), précisions"@fr, "Affiliation(s), details"@en.
+fresh:PILaboId rdf:type owl:Class;
+                        dc:identifier "E-161"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:PIAffiliation
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Identifiant RNSR du laboratoire d'appartenance"@fr, "Affiliated laboratory RNSR identifier"@en.
+fresh:IsPIContact rdf:type owl:Class;
+                        dc:identifier "E-179"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:PrimaryInvestigator
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:boolean];
+                            
+;                    dc:title "L'investigateur principal est-il un point de contact ?"@fr, "Is the principal investigator a contact point?"@en.
+fresh:AddTeamMember rdf:type owl:Class;
+                        dc:identifier "E-196"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:AdministrativeInformation
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:boolean];
+                            
+;                    dc:title "D'autres équipes sont-elles impliquées dans cette étude ? "@fr, "Are other teams involved in this study?"@en.
+fresh:TeamMember rdf:type owl:Class;
+                        dc:identifier "S-070"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:AdministrativeInformation
+
+;                    dc:title "Responsable de l'équipe partenaire"@fr, "Partner team leader"@en;
+                    dc:description "Cette section décrit les personnes ayant contribué à l'étude"@fr, "This section describes the persons who contributed to the study."@en.
+fresh:TeamMemberName rdf:type owl:Class;
+                        dc:identifier "E-162"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:TeamMember
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Prénom NOM du responsable de l'équipe"@fr, "First name LAST NAME of the team leader"@en;
+                    dc:description "Nom et prénom de la personne ayant contribué à l'étude"@fr, "Full name of the person who contributed to the study"@en.
+fresh:TeamMemberORCID rdf:type owl:Class;
+                        dc:identifier "E-163"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:TeamMember
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "ORCID du responsable de l'équipe"@fr, "Team leader's ORCID"@en.
+fresh:TeamMemberIdRef rdf:type owl:Class;
+                        dc:identifier "E-164"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:TeamMember
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Identifiant IdRef"@fr, "IdRef Identifier"@en.
+fresh:TeamMemberAffiliation rdf:type owl:Class;
+                        dc:identifier "S-071"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:TeamMember
+
+;                    dc:title "Affiliation(s) du responsable de l'équipe"@fr, "Team leader affiliation(s)"@en;
+                    dc:description "Cette section précise l'affiliation institutionnelle de la personne ayant contribué à l'étude"@fr, "nan"@en.
+fresh:OrganisationName rdf:type owl:Class;
+                        dc:identifier "E-024"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:TeamMemberAffiliation
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Nom de l'organisation d'affiliation principale"@fr, "Main affiliated organisation name"@en;
+                    dc:description "Nom de l'organisation d'affiliation "@fr, "Affiliated institution name"@en.
+fresh:OrganisationPID rdf:type owl:Class;
+                        dc:identifier "S-013"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:TeamMemberAffiliation
+
+;                    dc:title "Identification de l'organisation d'affiliation principale"@fr, "Main affiliated organisation identification"@en;
+                    dc:description "Identifiant de l’organisation d’affiliation"@fr, "Affiliated organisation identifier"@en.
+fresh:PIDSchema rdf:type owl:Class;
+                        dc:identifier "E-022"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:OrganisationPID
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:PIDSchema];
+                            
+;                    dc:title "Type d'identifiant de l'organisation d'affiliation principale"@fr, "Main affiliated organisation identifier type"@en;
+                    dc:description "Type d'identifiant d'organisation d'affiliation"@fr, "Affiliated organisation identifier type"@en.
+fresh:URI rdf:type owl:Class;
+                        dc:identifier "E-023"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:OrganisationPID
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Identifiant de l’organisation d’affiliation principale"@fr, "Main affiliated organisation identifier"@en.
+fresh:TeamMemberLabo rdf:type owl:Class;
+                        dc:identifier "E-165"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:TeamMemberAffiliation
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Affiliation(s), précisions"@fr, "Affiliation(s), details"@en.
+fresh:TeamMemberLaboId rdf:type owl:Class;
+                        dc:identifier "E-166"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:TeamMemberAffiliation
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Identifiant RNSR du laboratoire d'appartenance"@fr, "Affiliated laboratory RNSR identifier"@en.
+fresh:IsTeamMemberContact rdf:type owl:Class;
+                        dc:identifier "E-180"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:TeamMember
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:boolean];
+                            
+;                    dc:title "Le responsable de l'équipe est-il un point de contact ?"@fr, "Is the team leader a contact point ?"@en.
+fresh:ContactPoint rdf:type owl:Class;
+                        dc:identifier "S-018"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:AdministrativeInformation
+
+;                    dc:title "Point(s) de contact"@fr, "Contact point(s)"@en;
+                    dc:description "Cette section contient les informations concernant les personnes référentes pour l’étude"@fr, "This section contains information about the contact persons for the study."@en.
+fresh:ContactName rdf:type owl:Class;
+                        dc:identifier "E-033"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:ContactPoint
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Prénom NOM du contact"@fr, "First name LAST NAME of the contact"@en;
+                    dc:description "Nom de la personne référente"@fr, "Name of the contact person"@en.
+fresh:EMail rdf:type owl:Class;
+                        dc:identifier "E-034"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:ContactPoint
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Email du contact"@fr, "Contact email"@en;
+                    dc:description "Adresse mail de la personne référente"@fr, "Email addresse of the contact person"@en.
+fresh:ContactPointAffiliation rdf:type owl:Class;
+                        dc:identifier "S-072"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:ContactPoint
+
+;                    dc:title "Affiliation(s) du contact"@fr, "Contact affiliation(s)"@en;
+                    dc:description "Cette section précise l'affiliation institutionnelle de la personne réfrente"@fr, "This section specifies the institutional affiliation of the contact person. "@en.
+fresh:OrganisationName rdf:type owl:Class;
+                        dc:identifier "E-024"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:ContactPointAffiliation
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Nom de l'organisation d'affiliation principale"@fr, "Main affiliated organisation name"@en;
+                    dc:description "Nom de l'organisation d'affiliation "@fr, "Affiliated organisation name"@en.
+fresh:OrganisationPID rdf:type owl:Class;
+                        dc:identifier "S-013"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:ContactPointAffiliation
+
+;                    dc:title "Identification de l'organisation d'affiliation principale"@fr, "Main affiliated organisation identification"@en;
+                    dc:description "Identifiant de l’organisation d’affiliation"@fr, "Affiliated organisation identifier"@en.
+fresh:PIDSchema rdf:type owl:Class;
+                        dc:identifier "E-022"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:OrganisationPID
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:PIDSchema];
+                            
+;                    dc:title "Type d'identifiant de l'organisation d'affiliation principale"@fr, "Main affiliated organisation identifier type"@en;
+                    dc:description "Type d'identifiant d'organisation d'affiliation"@fr, "Affiliated organisation identifier type"@en.
+fresh:URI rdf:type owl:Class;
+                        dc:identifier "E-023"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:OrganisationPID
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Identifiant de l’organisation d’affiliation principale"@fr, "Main affiliated organisation identifier"@en.
+fresh:ContactPointLabo rdf:type owl:Class;
+                        dc:identifier "E-167"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:ContactPointAffiliation
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Affiliation(s), précisions"@fr, "Affiliation(s), details"@en.
+fresh:ContactPointLaboId rdf:type owl:Class;
+                        dc:identifier "E-168"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:ContactPointAffiliation
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Identifiant RNSR du laboratoire d'appartenance"@fr, "Affiliated laboratory RNSR identifier"@en.
+fresh:FundingAgent rdf:type owl:Class;
+                        dc:identifier "S-021"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:AdministrativeInformation
+
+;                    dc:title "Financeur"@fr, "Funder"@en;
+                    dc:description "Cette section contient les informations concernant les financeurs de l'étude"@fr, "This section contains information about the study's funders"@en.
+fresh:FundingAgentName rdf:type owl:Class;
+                        dc:identifier "E-038"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:FundingAgent
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Nom du financeur"@fr, "Funder name"@en;
+                    dc:description "Nom de l'organisme financeur"@fr, "Funding body name"@en.
+fresh:FundingAgentType rdf:type owl:Class;
+                        dc:identifier "E-039"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:FundingAgent
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:OrganisationType];
+                            
+;                    dc:title "Type de financeur"@fr, "Funder type"@en;
+                    dc:description "Type d'organisme financeur"@fr, "Funding body type"@en.
+fresh:OtherFundingAgentType rdf:type owl:Class;
+                        dc:identifier "E-181"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:FundingAgent
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Autre type de financeur, précisions"@fr, "Other funder type, details"@en.
+fresh:FundingAgentPID rdf:type owl:Class;
+                        dc:identifier "S-022"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:FundingAgent
+
+;                    dc:title "Identification du financeur"@fr, "Funder identification"@en;
+                    dc:description "Section identifiant l'organisme financeur"@fr, "Section identifying the funding body"@en.
+fresh:PIDSchema rdf:type owl:Class;
+                        dc:identifier "E-022"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:FundingAgentPID
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:PIDSchema];
+                            
+;                    dc:title "Type d'identifiant du financeur"@fr, "Funder identifier type"@en;
+                    dc:description "Type d'identifiant d'organisme financeur"@fr, "Type of funding body identifier"@en.
+fresh:URI rdf:type owl:Class;
+                        dc:identifier "E-023"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:FundingAgentPID
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Identifiant du financeur"@fr, "Funder identifier"@en;
+                    dc:description "Identifiant de l'organisme financeur"@fr, "Funder identifier URI"@en.
+fresh:OrganisationGovernance rdf:type owl:Class;
+                        dc:identifier "S-023"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:AdministrativeInformation
+
+;                    dc:title "Organisation et gouvernance"@fr, "Organisation and governance"@en;
+                    dc:description "Cette section rassemble les informations sur la gouvernance du projet, incluant le promoteur de l’étude, l’organisation responsable du traitement des données et les collaborations associées."@fr, "This section contains information about the governance of the project, including the study sponsor, the organisation responsible for data processing, and associated collaborations."@en.
+fresh:Sponsor rdf:type owl:Class;
+                        dc:identifier "S-024"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:OrganisationGovernance
+
+;                    dc:title "Promoteur de l'étude (Organisme responsable du traitement des données.)"@fr, "Sponsor (Organisation responsible for data processing.)"@en;
+                    dc:description "Cette section contient les informations concernant le promoteur de l'étude"@fr, "nan"@en.
+fresh:SponsorName rdf:type owl:Class;
+                        dc:identifier "E-042"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Sponsor
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Nom du promoteur"@fr, "Sponsor name"@en;
+                    dc:description "Nom de l'organisme promoteur de l'étude"@fr, "Name of the sponsor institution"@en.
+fresh:SponsorType rdf:type owl:Class;
+                        dc:identifier "E-043"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Sponsor
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:OrganisationType];
+                            
+;                    dc:title "Statut du promoteur"@fr, "Sponsor type"@en;
+                    dc:description "Statut de l'organisme promoteur"@fr, "Sponsor institution type"@en.
+fresh:OtherSponsorType rdf:type owl:Class;
+                        dc:identifier "E-182"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Sponsor
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Autre statut du promoteur, précisions"@fr, "Other sponsor type, details"@en.
+fresh:SponsorPID rdf:type owl:Class;
+                        dc:identifier "S-025"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Sponsor
+
+;                    dc:title "Identification du promoteur"@fr, "Sponsor identification"@en;
+                    dc:description "Section identifiant l'organisme promoteur de l'étude"@fr, "Section identifying the sponsor institution"@en.
+fresh:PIDSchema rdf:type owl:Class;
+                        dc:identifier "E-022"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:SponsorPID
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:PIDSchema];
+                            
+;                    dc:title "Type d'identifiant du promoteur"@fr, "Sponsor identifier type"@en;
+                    dc:description "Type d'identifiant de l'organisme promoteur"@fr, "Type of identifier of the sponsor institution"@en.
+fresh:URL rdf:type owl:Class;
+                        dc:identifier "E-045"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:SponsorPID
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Identifiant du promoteur"@fr, "Sponsor identifier"@en;
+                    dc:description "Identifiant de l'organisme promoteur"@fr, "Identifier of the sponsor institution"@en.
+fresh:Governance rdf:type owl:Class;
+                        dc:identifier "S-026"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:OrganisationGovernance
+
+;                    dc:title "Gouvernance"@fr, "Governance"@en;
+                    dc:description "Section qui décrit la gouvernance de l'étude"@fr, "Section describing the governance of the study"@en.
+fresh:Committee rdf:type owl:Class;
+                        dc:identifier "E-046"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Governance
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:boolean];
+                            
+;                    dc:title "Comité scientifique ou de pilotage"@fr, "Scientific or steering committee"@en;
+                    dc:description "Indique l'existance d’un comité scientifique ou d’un comité de pilotage associé au projet ou à l’étude"@fr, "Indicates the existence of a scientific committee or steering committee associated with the project or study."@en.
+fresh:CommitteeDetail rdf:type owl:Class;
+                        dc:identifier "E-047"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Governance
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Comité, précisions "@fr, "Committee details"@en;
+                    dc:description "Précisions sur la comitologie associée à l'étude"@fr, "Details on the comitology associated with the study"@en.
+fresh:OtherGovernance rdf:type owl:Class;
+                        dc:identifier "E-048"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Governance
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Autre modalité de gouvernance, précisions"@fr, "Other form of gouvernance, details"@en;
+                    dc:description "Autres modalités de gouvernance"@fr, "Other  forms of governance "@en.
+fresh:Collaborations rdf:type owl:Class;
+                        dc:identifier "S-027"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:OrganisationGovernance
+
+;                    dc:title "Collaborations"@fr, "Collaborations"@en;
+                    dc:description "Section qui décrit les collaborations impliquées"@fr, "Section describing the collaborations involved"@en.
+fresh:NetworkConsortium rdf:type owl:Class;
+                        dc:identifier "E-049"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Collaborations
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:boolean];
+                            
+;                    dc:title "Réseaux, consortiums"@fr, "Networks, consortia"@en;
+                    dc:description "Indique si le projet fait partie d'un réseau ou d'un consirtium"@fr, "Indicates whether the project is part of a network or consortium."@en.
+fresh:CollaborationsDetails rdf:type owl:Class;
+                        dc:identifier "E-050"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Collaborations
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Collaboration(s) impliquée(s), précisions"@fr, "Collaboration(s) involved, details"@en;
+                    dc:description "Précisions sur les collaborations impliquées"@fr, "Details on the collaborations involved"@en.
+fresh:OtherStudyId rdf:type owl:Class;
+                        dc:identifier "S-003"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:AdministrativeInformation
+
+;                    dc:title "Autre(s) identifiant(s) de l'étude"@fr, "Other(s) identifier(s) for the study"@en;
+                    dc:description "Autres identifiants connus de l'étude"@fr, "Other(s) study identifiers known"@en.
+fresh:IDSchema rdf:type owl:Class;
+                        dc:identifier "E-013"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:OtherStudyId
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Type d'identifiant de l'étude"@fr, "Study identifier type"@en;
+                    dc:description "Type d'identifiant de l'étude (promoteur ou registre des essais cliniques) "@fr, "Type of study identifier (sponsor or clinical trial registry)"@en.
+fresh:Identifier rdf:type owl:Class;
+                        dc:identifier "E-012"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:OtherStudyId
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Identifiant de l'étude"@fr, "Study identifier"@en;
+                    dc:description "Identifiant de l'étude"@fr, "Study identifier"@en.
+fresh:StudyMethodology rdf:type owl:Class;
+                        dc:identifier "S-065"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:FreshSchema
+
+;                    dc:title "Méthodologie de l'étude"@fr, "Study Methodology"@en.
+fresh:AnalysisUnit rdf:type owl:Class;
+                        dc:identifier "E-061"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:StudyMethodology
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:CollectionUnit];
+                            
+;                    dc:title "Unité de collecte"@fr, "Collection unit"@en;
+                    dc:description "Décrit l'entité analysée dans l'étude ou la variable."@fr, "Describes the entity being analysed in the study or variable"@en.
+fresh:ResearchType rdf:type owl:Class;
+                        dc:identifier "E-062"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:StudyMethodology
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:ResearchType];
+                            
+;                    dc:title "Modèle d'étude"@fr, "Study Type"@en;
+                    dc:description "Indique la nature de la recherche comprenant les études interventionnelles (également appelées expérimentales) et les études observationnelles."@fr, "Indicates the type of the research, including interventional (also known as experimental) studies and observational studies."@en.
+fresh:InterventionalStudy rdf:type owl:Class;
+                        dc:identifier "S-029"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:StudyMethodology
+
+;                    dc:title "Etude interventionnelle (expérimentale)"@fr, "Interventional Study"@en;
+                    dc:description "Une recherche dans laquelle les investigateurs réalisent une action ou une modification intentionnelle dans un groupe cible (ex. : traitement médical, programme de prévention, changement organisationnel, action éducative ou sociale), dans le but d’en évaluer les effets sur la santé, les comportements, ou les pratiques liés à la santé."@fr, "Research in which investigators carry out an intentional action or change in a target group (e.g., medical treatment, prevention program, organisational change, educational or social action) with the aim of evaluating its effects on health, behaviors, or health-related practices."@en.
+fresh:IsClinicalTrial rdf:type owl:Class;
+                        dc:identifier "E-153"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:InterventionalStudy
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:boolean];
+                            
+;                    dc:title "S'agit-il d'un essai clinique?"@fr, "Is this a clinical trial?"@en.
+fresh:TrialPhase rdf:type owl:Class;
+                        dc:identifier "E-064"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:InterventionalStudy
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:someValuesFrom tfo:TrialPhase]
+                            
+;                    dc:title "Phase de l'essai (Pour les essais à phases combinées, cochez plusieurs cases.)"@fr, "Study Phase (For combined phases, check several options.)"@en;
+                    dc:description "Stade d’un essai clinique définissant les objectifs et méthodes de l’évaluation d’un médicament ou produit biologique (tolérance, efficacité, comparaison, suivi). Pour les essais à phases combinées, cocher plusieurs cases."@fr, "The stage of a clinical trial defining the objectives and methods of evaluating a drug or biological product (tolerance, efficacy, comparison, follow-up). For combined phases, check several options."@en.
+fresh:ResearchPurpose rdf:type owl:Class;
+                        dc:identifier "E-063"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:InterventionalStudy
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:someValuesFrom tfo:ResearchPurpose]
+                            
+;                    dc:title "Objectif principal de la recherche"@fr, "Primary research purpose"@en;
+                    dc:description "L'objectif principal de la ou des interventions évaluées dans le cadre de l'étude."@fr, "The main objective of the intervention(s) being evaluated by the study."@en.
+fresh:OtherResearchPurpose rdf:type owl:Class;
+                        dc:identifier "E-178"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:InterventionalStudy
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Autre objectif principal, précisions"@fr, "Other research purpose, details"@en.
+fresh:IsInclusionGroups rdf:type owl:Class;
+                        dc:identifier "E-199"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:InterventionalStudy
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:boolean];
+                            
+;                    dc:title "L'étude comporte-t-elle plusieurs groupes définis dès l'inclusion ? Si oui, remplir les champs suivants"@fr, "Does the study include several groups defined at the time of inclusion ? If yes, complete the following fields"@en.
+fresh:InclusionGroup rdf:type owl:Class;
+                        dc:identifier "S-038"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:InterventionalStudy
+
+;                    dc:title "Groupes à l'inclusion"@fr, "Enrollment groups"@en;
+                    dc:description "Section décrivant chaque groupe à l'inclusion."@fr, "Section describing each group at inclusion."@en.
+fresh:GroupName rdf:type owl:Class;
+                        dc:identifier "E-079"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:InclusionGroup
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Nom du groupe"@fr, "Group name"@en;
+                    dc:description "Le libellé choisi pour le groupe à l'inclusion, unique dans le cadre de l'étude"@fr, "The title chosen for the inclusion group, unique within the study."@en.
+fresh:GroupDescription rdf:type owl:Class;
+                        dc:identifier "E-080"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:InclusionGroup
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Description du groupe"@fr, "Group description"@en;
+                    dc:description "Description des caractéristiques de chaque groupe à l’inclusion, précisant sur quels critères ils ont été distingués (par exemple : type d’exposition, caractéristiques cliniques, socio-démographiques ou contextuelles)."@fr, "Description of the characteristics of each group at inclusion, specifying the criteria used to distinguish them (e.g. type of exposure, clinical, socio-demographic or contextual characteristics)."@en.
+fresh:InterventionalStudyModel rdf:type owl:Class;
+                        dc:identifier "E-065"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:InterventionalStudy
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:InterventionnalStudyModel];
+                            
+;                    dc:title "Schéma d’intervention"@fr, "Intervention model"@en;
+                    dc:description "Conception générale de la stratégie d'attribution des interventions aux participants d'une étude clinique. Les types de modèles d'intervention comprennent : l'attribution à un seul groupe, l'attribution parallèle, l'attribution croisée et l'attribution factorielle."@fr, "The general design of the strategy for assigning interventions to participants in a clinical study. Types of intervention models include: single group assignment, parallel assignment, cross-over assignment, and factorial assignment."@en.
+fresh:Allocation rdf:type owl:Class;
+                        dc:identifier "S-030"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:InterventionalStudy
+
+;                    dc:title "Allocation "@fr, "Allocation "@en;
+                    dc:description "Méthode utilisée pour affecter les participants à un groupe d'intervention ou à un bras d'une étude clinique."@fr, "A method used to assign participants to an an intervention group or arm of a clinical study. "@en.
+fresh:AllocationMode rdf:type owl:Class;
+                        dc:identifier "E-066"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Allocation
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:AllocationMode];
+                            
+;                    dc:title "Mode d'allocation"@fr, "Allocation type"@en;
+                    dc:description "Les modes d'allocation sont l'allocation randomisée et l'allocation non randomisée. "@fr, "The types of allocation are randomized allocation and nonrandomized."@en.
+fresh:AllocationUnit rdf:type owl:Class;
+                        dc:identifier "E-067"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Allocation
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:AllocationUnit];
+                            
+;                    dc:title "Unité d'allocation"@fr, "Allocation unit"@en;
+                    dc:description "Entité à laquelle l'intervention est attribuée (individuelle ou cluster)."@fr, "Entity to which the intervention is assigned (individual or cluster)."@en.
+fresh:Masking rdf:type owl:Class;
+                        dc:identifier "S-031"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:InterventionalStudy
+
+;                    dc:title "Insu"@fr, "Masking"@en;
+                    dc:description "Stratégie de conception d'une étude dans laquelle une ou plusieurs parties impliquées dans l'étude, telles que l'investigateur ou les participants, ne savent pas quels participants ont été assignés à quelles interventions. "@fr, "A study design strategy in which one or more parties involved in the study, such as the investigator or participants, do not know which participants have been assigned which interventions."@en.
+fresh:MaskingType rdf:type owl:Class;
+                        dc:identifier "E-068"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Masking
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:MaskingType];
+                            
+;                    dc:title "Mode d'insu"@fr, "Masking type"@en;
+                    dc:description "Indique si l’étude est conduit en ouvert (toutes les parties connaissent l’intervention attribuée) ou avec insu (au moins une partie est tenue dans l’ignorance de l’intervention attribuée)."@fr, "Indicates whether the study is conducted open-label (all parties know the assigned intervention) or with masking (at least one party is unaware of the assigned intervention)."@en.
+fresh:BlindedMaskingDetails rdf:type owl:Class;
+                        dc:identifier "E-069"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Masking
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:someValuesFrom tfo:BlindedMaskingDetails]
+                            
+;                    dc:title "Groupe(s) avec insu (en aveugle)"@fr, "Blinded masking group(s)"@en;
+                    dc:description "Précise quels acteurs de l’étude (participant, personnel soignant, investigateur, analyste des données) ignorent l’intervention attribuée, afin de limiter les biais."@fr, "Specifies which stakeholders in the study (participant, care provider, investigator, outcome assessor ) are unaware of the assigned intervention, in order to reduce bias."@en.
+fresh:Arm rdf:type owl:Class;
+                        dc:identifier "S-033"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:InterventionalStudy
+
+;                    dc:title "Bras (ou sous-groupe de participants)"@fr, "Arm (or subgroup of participants)"@en;
+                    dc:description "Sous-groupe de participants dans une étude interventionnelle. Chaque bras reçoit une intervention spécifique ou suit une stratégie particulière, permettant de comparer les effets entre bras."@fr, "Subgroup of participants in an interventional study. Each arm receives a specific intervention or follows a particular strategy, allowing comparison of effects across arms."@en.
+fresh:ArmName rdf:type owl:Class;
+                        dc:identifier "E-071"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Arm
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Nom du bras"@fr, "Arm name"@en;
+                    dc:description "Le libellé choisi pour le bras, unique dans le cadre de l'étude"@fr, "The title chosen for the arm, unique within the study"@en.
+fresh:ArmType rdf:type owl:Class;
+                        dc:identifier "E-072"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Arm
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:ArmType];
+                            
+;                    dc:title "Type de bras"@fr, "Arm type"@en;
+                    dc:description "Description générale du bras participant à l'étude. Elle identifie le rôle de l'intervention dont bénéficient les participants. Les types de bras comprennent le bras expérimental, comparateur actif, comparateur placebo, comparateur fictif et le bras sans intervention."@fr, "A general description of the study arm. It identifies the role of the intervention that participants receive. Types of arms include experimental arm, active comparator arm, placebo comparator arm, sham comparator arm, and no intervention arm."@en.
+fresh:ArmTypeOther rdf:type owl:Class;
+                        dc:identifier "E-073"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Arm
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Autre type de bras, précisions"@fr, "Other arm type, details"@en;
+                    dc:description "Spécifie le type de bras si « Autre » a été sélectionné ci-dessus."@fr, "Specifies the arm type if “Other” was selected above."@en.
+fresh:ArmDescription rdf:type owl:Class;
+                        dc:identifier "E-074"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Arm
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Description du bras"@fr, "Arm description"@en;
+                    dc:description "Brève description du bras, y compris son objectif ou ses caractéristiques."@fr, "Brief description of the arm, including its purpose or characteristics."@en.
+fresh:Intervention rdf:type owl:Class;
+                        dc:identifier "S-039"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:InterventionalStudy
+
+;                    dc:title "Facteur, processus ou exposition étudié"@fr, "Studied factor, process, or exposure"@en;
+                    dc:description "Tout processus, action ou facteur auquel les participants sont soumis ou exposés, et qui fait l’objet d’une étude observationnelle afin d’évaluer ses effets sur la santé."@fr, "Any process, action or factor to which participants are subjected or exposed, and which is the subject of an observational study to assess its effects on health."@en.
+fresh:InterventionName rdf:type owl:Class;
+                        dc:identifier "E-082"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Intervention
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Nom du facteur ou de l'exposition"@fr, "Factor/exposure name"@en;
+                    dc:description "Le nom spécifique de l'action, du facteur ou de l'exposition tel qu'il est mentionné dans l'étude. Les facteurs comprennent différents produits de santé ou des approches non invasives, telles que l'éducation ou la modification du régime alimentaire et de l'exercice physique. Les expositions peuvent concerner par exemple des habitudes de vie, des facteurs environnementaux ou des antécédents médicaux."@fr, "The specific name of the action, factor or exposure as it is referred to in the study. Factors include various health products or non-invasive approaches, such as education or changes to diet and exercise. Exposures may include, for example, lifestyle habits, environmental factors, or medical history."@en.
+fresh:InterventionType rdf:type owl:Class;
+                        dc:identifier "E-083"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Intervention
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:InterventionType];
+                            
+;                    dc:title "Type de facteur ou d'exposition"@fr, "Factor/exposure type"@en;
+                    dc:description "Sélection de la catégorie qui décrit le mieux le facteur ou l'exposition, à partir de la liste prédéfinie d'options."@fr, "Selection of the category that best describes the factor or the exposure from the predefined list of options."@en.
+fresh:InterventionTypeOther rdf:type owl:Class;
+                        dc:identifier "E-084"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Intervention
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Autre type de facteur ou d'exposition, précisions"@fr, "Other factor/exposure type, details"@en;
+                    dc:description "Spécifie le type du facteur ou d'exposition si « Autre » a été sélectionné ci-dessus."@fr, "Specifies the type of factor or exposure if ‘Other’ was selected above."@en.
+fresh:ObservationalStudy rdf:type owl:Class;
+                        dc:identifier "S-034"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:StudyMethodology
+
+;                    dc:title "Etude observationnelle"@fr, "Observational study"@en;
+                    dc:description "Une recherche dans laquelle les investigateurs n’interviennent pas activement sur les participants ou le contexte étudié, mais observent, décrivent et analysent des situations existantes. Elle peut porter sur des données issues de soins courants, d’enquêtes, de registres, d’observations de comportements ou d’environnements, sans introduire de modification volontaire du réel."@fr, "Research in which the investigators do not actively intervene with participants or the study context, but rather observe, describe, and analyze existing situations. It may involve data from routine care, surveys, registries, or observations of behaviors or environments, without introducing any deliberate changes to reality."@en.
+fresh:ObservationalStudyDesign rdf:type owl:Class;
+                        dc:identifier "E-075"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:ObservationalStudy
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:ObservationalStudy];
+                            
+;                    dc:title "Modèle de l’étude observationnelle"@fr, "Observational study  design"@en;
+                    dc:description "Indique l’approche méthodologique de l’étude observationnelle, précisant comment les participants sont sélectionnés et suivis ou observés."@fr, "Describes the methodological approach of the observational study, specifying how participants are selected and monitored or observed."@en.
+fresh:OtherResearchTypeDetails rdf:type owl:Class;
+                        dc:identifier "E-076"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:ObservationalStudy
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Autre type d'étude observationnelle, précisions"@fr, "Other study design, details"@en;
+                    dc:description "Indique le modèle de recherche observationnelle lorsqu’il ne correspond pas aux options proposées"@fr, "Indicates the observational study design when it does not correspond to the options provided."@en.
+fresh:TimePerspective rdf:type owl:Class;
+                        dc:identifier "E-154"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:ObservationalStudy
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:RecrutementTiming];
+                            
+;                    dc:title "Perspective temporelle"@fr, "Time perspective"@en;
+                    dc:description "Indique la dimension temporelle de la collecte des données dans l’étude observationnelle."@fr, "Indicates the temporal dimension of data collection in the observational study."@en.
+fresh:IsInclusionGroups rdf:type owl:Class;
+                        dc:identifier "E-199"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:ObservationalStudy
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:allValuesFrom xsd:boolean]
+                            
+;                    dc:title "L'étude comporte-t-elle plusieurs groupes définis dès l'inclusion ? Si oui, remplir les champs suivants"@fr, "Does the study include several groups defined at enrollment ? If yes, complete the following fields"@en.
+fresh:InclusionGroup rdf:type owl:Class;
+                        dc:identifier "S-038"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:ObservationalStudy
+
+;                    dc:title "Groupes à l'inclusion"@fr, "Enrollment groups"@en;
+                    dc:description "Section décrivant chaque groupe à l'inclusion."@fr, "Section describing each group at inclusion."@en.
+fresh:GroupName rdf:type owl:Class;
+                        dc:identifier "E-079"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:InclusionGroup
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Nom du groupe"@fr, "Group name"@en;
+                    dc:description "Le libellé choisi pour le groupe à l'inclusion, unique dans le cadre de l'étude"@fr, "The title chosen for the inclusion group, unique within the study."@en.
+fresh:GroupDescription rdf:type owl:Class;
+                        dc:identifier "E-080"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:InclusionGroup
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Description du groupe"@fr, "Group description"@en;
+                    dc:description "Description des caractéristiques de chaque groupe à l’inclusion, précisant sur quels critères ils ont été distingués (par exemple : type d’exposition, caractéristiques cliniques, socio-démographiques ou contextuelles)."@fr, "Description of the characteristics of each group at inclusion, specifying the criteria used to distinguish them (e.g. type of exposure, clinical, socio-demographic or contextual characteristics)."@en.
+fresh:Intervention rdf:type owl:Class;
+                        dc:identifier "S-039"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:ObservationalStudy
+
+;                    dc:title "Facteur, processus ou exposition étudié"@fr, "Studied factor, process, or exposure"@en;
+                    dc:description "Tout processus, action ou facteur auquel les participants sont soumis ou exposés, et qui fait l’objet d’une étude observationnelle afin d’évaluer ses effets sur la santé."@fr, "Any process, action or factor to which participants are subjected or exposed, and which is the subject of an observational study to assess its effects on health."@en.
+fresh:InterventionName rdf:type owl:Class;
+                        dc:identifier "E-082"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Intervention
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Nom du facteur ou de l'exposition"@fr, "Factor/exposure name"@en;
+                    dc:description "Le nom spécifique de l'action, du facteur ou de l'exposition tel qu'il est mentionné dans l'étude. Les facteurs comprennent différents produits de santé ou des approches non invasives, telles que l'éducation ou la modification du régime alimentaire et de l'exercice physique. Les expositions peuvent concerner par exemple des habitudes de vie, des facteurs environnementaux ou des antécédents médicaux."@fr, "The specific name of the action, factor or exposure as it is referred to in the study. Factors include various health products or non-invasive approaches, such as education or changes to diet and exercise. Exposures may include, for example, lifestyle habits, environmental factors, or medical history."@en.
+fresh:InterventionType rdf:type owl:Class;
+                        dc:identifier "E-083"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Intervention
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:InterventionType];
+                            
+;                    dc:title "Type de facteur ou d'exposition"@fr, "Factor/exposure type"@en;
+                    dc:description "Sélection de la catégorie qui décrit le mieux le facteur ou l'exposition, à partir de la liste prédéfinie d'options."@fr, "Selection of the category that best describes the factor or the exposure from the predefined list of options."@en.
+fresh:InterventionTypeOther rdf:type owl:Class;
+                        dc:identifier "E-084"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Intervention
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Autre type de facteur ou d'exposition, précisions"@fr, "Other factor/exposure type, details"@en;
+                    dc:description "Spécifie le type du facteur ou d'exposition si « Autre » a été sélectionné ci-dessus."@fr, "Specifies the type of factor or exposure if ‘Other’ was selected above."@en.
+fresh:Outcomes rdf:type owl:Class;
+                        dc:identifier "S-050"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:StudyMethodology
+
+;                    dc:title "Critères d'évaluation (de jugement)"@fr, "Health-related outcomes"@en;
+                    dc:description "Mesure ou observation relative à la santé utilisée pour évaluer l’effet d’une intervention ou décrire la survenue, l’évolution ou les déterminants d’une maladie ou d’une caractéristique."@fr, "A health-related measurement or observation used to assess the effect of an intervention or describe the occurrence, progression, or determinants of a disease or characteristic."@en.
+fresh:PrimaryOutcomes rdf:type owl:Class;
+                        dc:identifier "E-115"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Outcomes
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Critère d'évaluation (de jugement) principal"@fr, "Primary Outcome"@en;
+                    dc:description "Mesure ou observation prioritaire de l’étude, définie à l’avance, qui sert à répondre à la question de recherche principale."@fr, "The main pre-specified measurement or observation of the study, used to address the primary research question."@en.
+fresh:SecondaryOutcomes rdf:type owl:Class;
+                        dc:identifier "E-116"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:Outcomes
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Critère(s) d'évaluation (de jugement) secondaire(s)"@fr, "Secondary Outcome(s)"@en;
+                    dc:description "Mesures ou observations complémentaires, définies à l’avance, qui permettent d’apporter des informations supplémentaires ou d’explorer des aspects associés à la question principale."@fr, "Additional pre-specified measurements or observations that provide complementary information or explore related aspects of the primary question."@en.
+fresh:DataCollectionAccess rdf:type owl:Class;
+                        dc:identifier "S-074"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:FreshSchema
+
+;                    dc:title "Collecte et accès aux données"@fr, "Data collection and access"@en.
+fresh:DataCollectionIntegration rdf:type owl:Class;
+                        dc:identifier "S-040"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataCollectionAccess
+
+;                    dc:title "Collecte et réutilisation de données"@fr, "Data collection and reuse"@en;
+                    dc:description "Cette section décrit les données utilisées dans l’étude, qu’elles soient collectées spécifiquement pour celle-ci ou réutilisées à partir de sources tierces préexistantes."@fr, "This section describes the data used in the study, whether collected specifically for this study or reused from pre-existing third-party sources."@en.
+fresh:SampleSize rdf:type owl:Class;
+                        dc:identifier "S-051"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataCollectionIntegration
+
+;                    dc:title "Nombre de participants"@fr, "Number of participants"@en;
+                    dc:description "Nombre de participants prévus et effectifs"@fr, "Planned and actual number of participants"@en.
+fresh:PlannedSampleSize rdf:type owl:Class;
+                        dc:identifier "E-117"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:SampleSize
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:PlannedSampleSize];
+                            
+;                    dc:title "Nombre prévu de participants"@fr, "Target number of participants"@en;
+                    dc:description "Nombre de participants spécifié dans le plan d'étude ou le protocole"@fr, "Number of participants specified in the study design or protocol"@en.
+fresh:FinalSampleSize rdf:type owl:Class;
+                        dc:identifier "E-118"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:SampleSize
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Nombre actuel de participants"@fr, "Actual number of participants"@en;
+                    dc:description "Nombre de participants qui ont effectivement été inclus ou ont participé"@fr, "Number of participants who were actually included or participated"@en.
+fresh:CollectionChronology rdf:type owl:Class;
+                        dc:identifier "S-043"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataCollectionIntegration
+
+;                    dc:title "Chronologie de la collecte"@fr, "Collection chronology"@en;
+                    dc:description "Indique la période pendant laquelle les données de l’étude ont été recueillies."@fr, "Indicates the period during which the study data were collected."@en.
+fresh:CollectionStart rdf:type owl:Class;
+                        dc:identifier "E-096"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:CollectionChronology
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:nan];
+                            
+;                    dc:title "Date de début de la collecte (recrutement du premier participant)"@fr, "Collection start date (recruitment of the first participant)"@en;
+                    dc:description "la date à laquelle la collecte des données individuelles a commencé dans le cadre de l’étude"@fr, "the date on which the collection of individual data began as part of the study"@en.
+fresh:CollectionEnd rdf:type owl:Class;
+                        dc:identifier "E-097"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:CollectionChronology
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:nan];
+                            
+;                    dc:title "Date de fin de la collecte (dernier suivi du dernier participant)"@fr, "Collection end date (last follow-up of the last participant)"@en;
+                    dc:description "la date à laquelle la collecte des données individuelles a été terminée dans le cadre de l’étude"@fr, "the date on which the collection of individual data was completed as part of the study"@en.
+fresh:CollectionFrequency rdf:type owl:Class;
+                        dc:identifier "E-086"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:CollectionChronology
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Fréquence de la collecte"@fr, "Collection frequency"@en;
+                    dc:description "Intervalles ou nombre de mesures réalisées au cours de l’étude"@fr, "Intervals or number of measurements performed during the study"@en.
+fresh:DataCollection rdf:type owl:Class;
+                        dc:identifier "S-041"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataCollectionIntegration
+
+;                    dc:title "Informations concernant les données collectées auprès des participants dans le cadre de l'étude (Les informations concernant la réutilisation de données existantes seront à renseigner dans la prochaine section)"@fr, "Information concerning data collected from participants during the study (Information concerning the reuse of existing data will be provided in the next section)."@en;
+                    dc:description "Ensemble des informations recueillies directement auprès des participants au cours de l’étude, que ce soit par observation, mesure, examen, prélèvement, entretien, questionnaire ou suivi."@fr, "All information collected directly from study participants during the course of the study, through observation, measurement, examination, sampling, interview, questionnaire, or follow-up."@en.
+fresh:CollectionProcess rdf:type owl:Class;
+                        dc:identifier "S-042"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataCollection
+
+;                    dc:title "Procédure de collecte"@fr, "Collection procedure"@en;
+                    dc:description "Section décrivant la manière dont les données sont recueillies dans le cadre de l’étude."@fr, "Section describing how data are collected in the study."@en.
+fresh:CollectionMode rdf:type owl:Class;
+                        dc:identifier "E-087"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:CollectionProcess
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:someValuesFrom tfo:CollectionMode]
+                            
+;                    dc:title "Mode de collecte"@fr, "Collection mode"@en;
+                    dc:description "Méthode utilisée pour recueillir les données"@fr, "The method used to collect data"@en.
+fresh:CollectionModeOther rdf:type owl:Class;
+                        dc:identifier "E-088"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:CollectionProcess
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Autre mode de collecte, précisions"@fr, "Other collection mode, details"@en;
+                    dc:description "Spécifie le mode de collecte si « Autre » a été sélectionné ci-dessus."@fr, "Specifies the collection mode if ‘Other’ was selected above."@en.
+fresh:CollectionModeDetails rdf:type owl:Class;
+                        dc:identifier "E-089"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:CollectionProcess
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Mode de collecte, précisions"@fr, "Collection mode, details"@en;
+                    dc:description "Informations complémentaires sur la collecte, comme le contexte, les instruments ou protocoles utilisés."@fr, "Additional information about the collection, such as context, instruments, or protocols used."@en.
+fresh:SamplingMode rdf:type owl:Class;
+                        dc:identifier "E-092"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:CollectionProcess
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:someValuesFrom tfo:SamplingMode]
+                            
+;                    dc:title "Procédure d'échantillonage à l'inclusion"@fr, "Sampling procedure at inclusion"@en;
+                    dc:description "Décrit la méthode utilisée pour sélectionner les participants lors de leur inclusion dans l’étude"@fr, "Describes the method used to select participants when they were included in the study."@en.
+fresh:SamplingModeOther rdf:type owl:Class;
+                        dc:identifier "E-093"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:CollectionProcess
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Autre procédure d'échantillonnage, précisions"@fr, "Other sampling procedure, details"@en;
+                    dc:description "Spécifie la procédure d'échantillonnage si « Autre » a été sélectionné ci-dessus."@fr, "Specifies the sampling procedure if ‘Other’ was selected above."@en.
+fresh:RecruitmentSource rdf:type owl:Class;
+                        dc:identifier "E-094"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataCollection
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:someValuesFrom tfo:RecruitmentSource]
+                            
+;                    dc:title "Source de recrutement des participants "@fr, "Participants recruitment source"@en;
+                    dc:description "Décrit l’origine ou le canal utilisé pour identifier et inclure les participants dans l’étude"@fr, "Describes the origin or channel used to identify and include participants in the study."@en.
+fresh:RecruitmentSourceOther rdf:type owl:Class;
+                        dc:identifier "E-095"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataCollection
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Autre source de recrutement, précisions"@fr, "Other recruitment source, details"@en;
+                    dc:description "Spécifie la source de recrutement si « Autre » a été sélectionné ci-dessus."@fr, "Specify the recruitment source if ‘Other’ was selected above."@en.
+fresh:ActiveFollowUp rdf:type owl:Class;
+                        dc:identifier "S-044"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataCollection
+
+;                    dc:title "Suivi actif des participants"@fr, "Active follow-up"@en;
+                    dc:description "Le suivi actif désigne une procédure systématique de collecte d’informations auprès des participants après leur inclusion dans l’étude, à l’initiative de l’équipe de recherche. Il implique un contact direct ou organisé (par visite, appel, questionnaire, examen, etc.) visant à recueillir régulièrement des données sur l’état de santé, l’exposition, ou les événements survenus pendant la période d’observation."@fr, "Active follow-up refers to a systematic process of collecting information from participants after their inclusion in the study, initiated by the research team. It involves direct or organised contact (through visits, phone calls, questionnaires, examinations, etc.) to regularly obtain data on health status, exposures, or events occurring during the observation period."@en.
+fresh:IsActiveFollowUp rdf:type owl:Class;
+                        dc:identifier "E-098"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:ActiveFollowUp
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:boolean];
+                            
+;                    dc:title "Un suivi actif des participants est-il réalisé ?"@fr, "It is an active follow-up?"@en;
+                    dc:description "Indique si les participants font l’objet d’un suivi actif dans le cadre de l’étude et la modalité du suivi"@fr, "Indicates whether participants are followed over time within the study and the method used."@en.
+fresh:FollowUpMode rdf:type owl:Class;
+                        dc:identifier "E-099"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:ActiveFollowUp
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:allValuesFrom tfo:FollowUpMode]
+                            
+;                    dc:title "Modalités du suivi actif"@fr, "Follow-up method"@en;
+                    dc:description "Indique les modalités du suivi actif des participants"@fr, "Indicates the ways of active follow-up of participants."@en.
+fresh:FollowUpModeOther rdf:type owl:Class;
+                        dc:identifier "E-100"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:ActiveFollowUp
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Autre modalité de suivi, précisions"@fr, "Other follow-up method, details"@en;
+                    dc:description "Spécifie la modalité de suivi si « Autre » a été sélectionné ci-dessus."@fr, "Specifies the follow-up method if ‘Other’ was selected above."@en.
+fresh:DataTypes rdf:type owl:Class;
+                        dc:identifier "S-052"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataCollection
+
+;                    dc:title "Types de données"@fr, "Data types"@en;
+                    dc:description "Décrit les types de données recueillies au cours de l'étude auprès des participants"@fr, "Describes the types of data collected directly from study participants during the study"@en.
+fresh:DataType rdf:type owl:Class;
+                        dc:identifier "E-119"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataTypes
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:someValuesFrom tfo:Datatype]
+                            
+;                    dc:title "Type de données"@fr, "Data type"@en;
+                    dc:description "Sélection, à partir d’une liste prédéfinie, du ou des types de données collectées dans l’étude"@fr, "Selection, from a predefined list, of the type(s) of data collected in the study"@en.
+fresh:DataTypeOther rdf:type owl:Class;
+                        dc:identifier "E-124"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataTypes
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Autre type de données, précisions"@fr, "Other data type, details"@en;
+                    dc:description "Spécifie le type de données si « Autre » a été sélectionné ci-dessus."@fr, "Specifies the data type if “Other” was selected above."@en.
+fresh:ClinicalDataDetails rdf:type owl:Class;
+                        dc:identifier "E-120"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataTypes
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Données cliniques, précisions"@fr, "Clinical data, details"@en;
+                    dc:description "Précisions concernant les données cliniques collectées"@fr, "Details regarding the clinical data collected"@en.
+fresh:ParaclinicalDataOther rdf:type owl:Class;
+                        dc:identifier "E-198"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataTypes
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Autres données paracliniques (hors biologiques), précisions"@fr, "Other paraclinical data (non-biological), details"@en;
+                    dc:description "Spécifie le type de données paracliniques (hors biologiques) si « Autre » a été sélectionné ci-dessus."@fr, "Specify the type of paraclinical data (non-biological)"@en.
+fresh:BiologicalDataDetails rdf:type owl:Class;
+                        dc:identifier "E-121"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataTypes
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Données biologiques, précisions"@fr, "Biological data, details"@en;
+                    dc:description "Précisions concernant les données biologiques collectées"@fr, "Details regarding the biological data collected"@en.
+fresh:isDataInBiobank rdf:type owl:Class;
+                        dc:identifier "E-122"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataTypes
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:boolean];
+                            
+;                    dc:title "Présence d'échantillons de données biologiques dans une biobanque ?"@fr, "Presence of biological data samples in a biobank ?"@en;
+                    dc:description "Indique si une collection d’échantillons biologiques est conservée et mis à disposition au sein d'une biobanque"@fr, "Indicates whether a collection of biological samples is stored and made available in a biobank."@en.
+fresh:BiobankContent rdf:type owl:Class;
+                        dc:identifier "E-123"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataTypes
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:someValuesFrom tfo:BiobankContent]
+                            
+;                    dc:title "Nature des échantillons"@fr, "Nature of samples"@en;
+                    dc:description "Sélection, à partir d’une liste prédéfinie, du ou des types d'échantillons contenus dans la biobanque"@fr, "Selection, from a predefined list, of the type(s) of samples contained in the biobank"@en.
+fresh:BiobankContentOther rdf:type owl:Class;
+                        dc:identifier "E-155"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataTypes
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Autre échantillon, précisions"@fr, "Other sample, details"@en.
+fresh:OtherLiquidsDetails rdf:type owl:Class;
+                        dc:identifier "E-156"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataTypes
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Autres liquides ou sécrétions biologiques, précisions"@fr, "Other fluids and secretions, details"@en.
+fresh:IsDataIntegration rdf:type owl:Class;
+                        dc:identifier "E-101"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataCollectionIntegration
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:boolean];
+                            
+;                    dc:title "Des données individuelles provenant d'autres sources sont-elles réutilisées dans le cadre de cette étude ?"@fr, "Are individual data from other sources reused in this study?"@en;
+                    dc:description "Indique si les données individuelles préexistantes issues de sources tierces ont été utilisées dans le cadre de l'étude"@fr, "Indicates whether pre-existing individual data from third-party sources were used in the study."@en.
+fresh:DataIntegration rdf:type owl:Class;
+                        dc:identifier "S-066"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataCollectionIntegration
+
+;                    dc:title "Réutilisation de données existantes"@fr, "Reuse of existing data"@en;
+                    dc:description "La réutilisation de données existantes désigne le recours, dans le cadre de l’étude, à des données déjà collectées pour un autre objectif (recherche antérieure, registre, base administrative, dossier médical, etc.), sans nouvelle collecte directe auprès des participants."@fr, "The reuse of existing data refers to the use, within the study, of data previously collected for another purpose (such as a prior research project, registry, administrative database, or medical record), without new data collection directly from participants."@en.
+fresh:ConformityDeclaration rdf:type owl:Class;
+                        dc:identifier "E-020"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataIntegration
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:ConformityDeclaration];
+                            
+;                    dc:title "Déclaration de conformité"@fr, "Declaration of conformity"@en;
+                    dc:description "Engagement formel qu’un projet de recherche respecte l’ensemble des conditions fixées par une Méthodologie de Référence (MR) de la CNIL, permettant d’utiliser des données de santé sans autorisation spécifique."@fr, "Formal statement that a research project complies with all requirements of a CNIL Reference Methodology, allowing the use of health data without specific authorisation."@en.
+fresh:ThirdPartySource rdf:type owl:Class;
+                        dc:identifier "S-045"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataIntegration
+
+;                    dc:title "Informations concernant les données réutilisées pour l'étude (Plusieurs sources possibles)"@fr, "Information concerning data reused for the study  (Several possible sources)"@en;
+                    dc:description "Cette section décrit les sources des données préexistantes réutilisées dans le cadre de l'étude"@fr, "This section describes the sources of pre-existing data reused in the study"@en.
+fresh:SourceName rdf:type owl:Class;
+                        dc:identifier "E-102"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:ThirdPartySource
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Description de la source"@fr, "Source description"@en;
+                    dc:description "Toute information supplémentaire caractérisant la source ( nom, origine, qualité, modalités d'accès, liens eventuels)"@fr, "Any additional information characterising the source (name, origin, quality, access methods, any links)"@en.
+fresh:SourceId rdf:type owl:Class;
+                        dc:identifier "E-157"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:ThirdPartySource
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Identifiant de la source"@fr, "Source identifier"@en.
+fresh:SourceType rdf:type owl:Class;
+                        dc:identifier "E-103"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:ThirdPartySource
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:someValuesFrom tfo:SourceType]
+                            
+;                    dc:title "Type de source"@fr, "Source type"@en;
+                    dc:description "Type de source des données utilisées"@fr, "Type of data source used"@en.
+fresh:SourcePurpose rdf:type owl:Class;
+                        dc:identifier "E-104"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:ThirdPartySource
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:SourcePurpose];
+                            
+;                    dc:title "Objectif de l'intégration de la source"@fr, "Source integration purpose"@en;
+                    dc:description "Finalité de l’utilisation de la source dans le cadre de l'étude"@fr, "Purpose of using the source in the study"@en.
+fresh:OtherSourceType rdf:type owl:Class;
+                        dc:identifier "E-105"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:ThirdPartySource
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Autre type de source, précisions"@fr, "Other source type, details"@en;
+                    dc:description "Indique le type de source lorsqu’il ne correspond pas aux options proposées"@fr, "Indicate the type of source when it does not correspond to the options provided"@en.
+fresh:DataAccess rdf:type owl:Class;
+                        dc:identifier "S-053"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataCollectionAccess
+
+;                    dc:title "Accès aux données"@fr, "Data access"@en;
+                    dc:description "Cette section décrit différents aspects d'accès aux données recueillies au cours de l'étude."@fr, "This section describes various aspects of accessing the data collected during the study."@en.
+fresh:DataQuality rdf:type owl:Class;
+                        dc:identifier "S-057"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataAccess
+
+;                    dc:title "Qualité des données"@fr, "Data quality"@en;
+                    dc:description "Informations sur les procédures et outils mis en place pour assurer la qualité, la cohérence et la traçabilité des données collectées dans l’étude."@fr, "Information on the procedures and tools implemented to ensure the quality, consistency, and traceability of data collected in the study."@en.
+fresh:UsedStandards rdf:type owl:Class;
+                        dc:identifier "E-140"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataQuality
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:allValuesFrom xsd:string]
+                            
+;                    dc:title "Standard(s) ou nomenclature(s) employé(s)"@fr, "Standard(s) or nomenclature(s) used"@en;
+                    dc:description "Normes, classifications ou terminologies utilisées pour coder et structurer les données (ex. : ICD-10, LOINC, SNOMED CT)"@fr, "Standards, classifications, or terminologies used to code and structure data (e.g., ICD-10, LOINC, SNOMED CT)"@en.
+fresh:QualityProcedure rdf:type owl:Class;
+                        dc:identifier "E-141"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataQuality
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:allValuesFrom xsd:string]
+                            
+;                    dc:title "Procédure qualité utilisée"@fr, "Quality procedure used"@en;
+                    dc:description "Méthodes et contrôles appliqués pour garantir l’exactitude, la complétude et la cohérence des données (ex. : validation, audit, double saisie)"@fr, "Methods and controls used to ensure the accuracy, completeness, and consistency of data (e.g., validation, auditing, double entry)."@en.
+fresh:DataAvailability rdf:type owl:Class;
+                        dc:identifier "S-067"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataAccess
+
+;                    dc:title "Disponibilité du jeu de données"@fr, "Data availability"@en.
+fresh:IndividualDataAccess rdf:type owl:Class;
+                        dc:identifier "E-125"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataAvailability
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:IndividualDataAccess];
+                            
+;                    dc:title "Accès aux données individuelles"@fr, "Access to individual data"@en;
+                    dc:description "Statut de disponibilité des données individuelles à la fin de la collecte"@fr, "Individual data availability status at the end of the collect"@en.
+fresh:AggregatedDataAccess rdf:type owl:Class;
+                        dc:identifier "E-126"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataAvailability
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Modalités de mise à disposition des données agrégées"@fr, "Conditions under which the aggregated data are made available"@en.
+fresh:DataAccessRequestTool rdf:type owl:Class;
+                        dc:identifier "S-054"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataAvailability
+
+;                    dc:title "Outil de demande d'accès aux données"@fr, "Data access request tool"@en;
+                    dc:description "Cette section regroupe les informations relatives à l’existence éventuelle d’un outil d'accès aux données"@fr, "This section contains information about the possible presence of a data access request tool"@en.
+fresh:DataAccessRequestToolAvailable rdf:type owl:Class;
+                        dc:identifier "E-127"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataAccessRequestTool
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:boolean];
+                            
+;                    dc:title "Existe-t-il un outil de demande d'accès aux données ?"@fr, "A data access request tool is it available ?"@en;
+                    dc:description "Indique si un outil (plateforme, formulaire en ligne ou autre système) permettant de formuler une demande d’accès aux données est disponible."@fr, "Indicates whether a tool (platform, online form, or other system) is available for submitting a request for access to data."@en.
+fresh:DataAccessRequestToolLocation rdf:type owl:Class;
+                        dc:identifier "E-128"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataAccessRequestTool
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Lien vers l'outil de demande d'accès"@fr, "Link to the data access request tool"@en;
+                    dc:description "Fournit l’URL ou la référence donnant accès à cet outil lorsque celui-ci est disponible."@fr, "Provides the URL or reference giving access to this tool when it is available."@en.
+fresh:DataFileCompleteness rdf:type owl:Class;
+                        dc:identifier "E-134"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataAvailability
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Complétude des fichiers des données "@fr, "Data file completeness "@en;
+                    dc:description "Indique l'écart éventuel entre les données collectées et les données disponibles. Il permet de préciser, le cas échéant, les raisons pour lesquelles certains éléments collectés n’ont pas été inclus dans le fichier de données partagées (par exemple, les éléments directement identifiants)."@fr, "Indicates any discrepancy between the data collected and the data available. It allows you to specify, where applicable, the reasons why certain items collected have not been included in the shared data file (e.g. items that directly identify individuals)."@en.
+fresh:DataLocation rdf:type owl:Class;
+                        dc:identifier "E-136"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataAvailability
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Localisation des données"@fr, "Data location"@en;
+                    dc:description "Emplacement où les données collectées sont actuellement stockées."@fr, "Location where the data collection is currently stored. "@en.
+fresh:UseStatement rdf:type owl:Class;
+                        dc:identifier "S-068"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataAccess
+
+;                    dc:title "Conditions d'usage"@fr, "Use conditions"@en.
+fresh:AccessConditions rdf:type owl:Class;
+                        dc:identifier "E-129"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:UseStatement
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Conditions d'accès aux données"@fr, "Data access conditions"@en;
+                    dc:description "Toute information supplémentaire susceptible d'aider l'utilisateur à comprendre les conditions d'accès et d'utilisation de la collecte de données (par exemple, contacter l'investigateur principal pour plus d'information)"@fr, "Any additional information that will assist the user in understanding the access and use conditions of the data collection (for example, contact the principal investigator for more information)."@en.
+fresh:AccessRestrictions rdf:type owl:Class;
+                        dc:identifier "E-130"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:UseStatement
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Restrictions d'accès"@fr, "Access restrictions"@en;
+                    dc:description "Toute restriction relative à l'accès ou à l'utilisation du recueil de données, telle que la certification de confidentialité ou les restrictions de distribution, doit être indiquée ici. Il peut s'agir de restrictions appliquées par l'auteur, le producteur ou le diffuseur des données."@fr, "Any restrictions on access to or use of the data collection such as privacy certification or distribution restrictions should be indicated here. These can be restrictions applied by the author, producer, or disseminator of the data. "@en.
+fresh:AdditionalDataAccessLink rdf:type owl:Class;
+                        dc:identifier "E-131"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:UseStatement
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Lien vers le plan de partage des données ou vers une documentation relative à l'accès aux données"@fr, "Link to sharing plan or to documentation relating to data access."@en;
+                    dc:description "Indique une URL ou une référence pointant vers le plan de partage ou vers une page ou un document décrivant plus en détail les conditions et procédures d’accès aux données."@fr, "Provides a URL or reference to a sharing plan or to a page or document that describes in more detail the conditions and procedures for accessing the data."@en.
+fresh:NonDisclosureAgreement rdf:type owl:Class;
+                        dc:identifier "E-137"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:UseStatement
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Accord de confidentialité"@fr, "Non-disclosure agreement"@en;
+                    dc:description "Indique si la signature d’une déclaration de confidentialité est requise pour accéder à la ressource."@fr, "Indicates whether a confidentiality agreement must be signed in order to access the resource."@en.
+fresh:DataInformationContact rdf:type owl:Class;
+                        dc:identifier "S-073"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:UseStatement
+
+;                    dc:title "Personne à contacter pour des renseignements concernant les données"@fr, "Contact person for data information"@en;
+                    dc:description "Noms et adresses des personnes impliquées dans l'étude, à contacter pour obtenir les renseignements concernant les données. Elles peuvent être sollicitées en tant que personnes ressources pour les problèmes ou questions soulevés par les utilisateurs. "@fr, "Names and addresses of individuals involved in the study who can be contacted for information about the data. They can be consulted as resource persons for problems or questions raised by users."@en.
+fresh:DIContactName rdf:type owl:Class;
+                        dc:identifier "E-183"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataInformationContact
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Prénom NOM du contact"@fr, "First name LAST NAME of the contact"@en.
+fresh:DIContactMail rdf:type owl:Class;
+                        dc:identifier "E-184"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataInformationContact
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Email du contact"@fr, "Contact email"@en.
+fresh:DataCitation rdf:type owl:Class;
+                        dc:identifier "S-055"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataAccess
+
+;                    dc:title "Obligations liées à l’usage des données"@fr, "Obligations related to data use"@en;
+                    dc:description "Indique les responsabilités de l’utilisateur vis-à-vis des données"@fr, "Indicates the user's responsibilities with regard to data"@en.
+fresh:DataCitationRequirement rdf:type owl:Class;
+                        dc:identifier "E-132"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataCitation
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Obligation de transmission des travaux "@fr, "Reporting requirement"@en;
+                    dc:description "Indique l’obligation pour les utilisateurs d’informer le producteur et le distibuteur des données de toute utilisation des données, en fournissant les références des publications ou des copies des papiers s’appuyant sur ces données."@fr, "Indicates the obligation for users to inform the data producer and distributor of any use of the data, providing references to publications or copies of papers based on this data."@en.
+fresh:DataCitationStatement rdf:type owl:Class;
+                        dc:identifier "E-133"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataCitation
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Obligation de citation"@fr, "Citation requirement"@en;
+                    dc:description "Exigence selon laquelle un recueil de données doit être correctement cité dans les articles ou autres publications basés sur l'analyse de ces données."@fr, "Requirement that a data collection should be cited properly in articles or other publications that are based on analysis of the data."@en.
+fresh:VariableDictionnary rdf:type owl:Class;
+                        dc:identifier "S-058"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataAccess
+
+;                    dc:title "Dictionnaire des variables"@fr, "Data dictionary"@en;
+                    dc:description "Document listant et décrivant toutes les variables collectées, leur format, unités et modalités de codage."@fr, "Document listing and describing all collected variables, their format, units, and coding modalities."@en.
+fresh:VariableDictionnaryAvailable rdf:type owl:Class;
+                        dc:identifier "E-142"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:VariableDictionnary
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:boolean];
+                            
+;                    dc:title "Existe-t-il un dictionnaire des variables ?"@fr, "A data dictionary is it available ?"@en;
+                    dc:description "Existence d’un dictionnaire des variables"@fr, "Presence of a data dictionary"@en.
+fresh:VariableDictionnaryLink rdf:type owl:Class;
+                        dc:identifier "E-143"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:VariableDictionnary
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Lien vers le dictionnaire des variables"@fr, "Link to the data dictionary"@en;
+                    dc:description "URL ou adresse permettant d’accéder au dictionnaire des variables lorsque celui-ci est disponible."@fr, "URL or address providing access to the data dictionary when it is available."@en.
+fresh:MockSample rdf:type owl:Class;
+                        dc:identifier "S-056"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataAccess
+
+;                    dc:title "Echantillon fictif"@fr, "Mock sample"@en;
+                    dc:description "Cette section regroupe les informations relatives à l’existence éventuelle d’un échantillon fictif (données simulées ou anonymisées à des fins de test ou de démonstration)"@fr, "This section contains information about the possible existence of a synthetic sample (simulated or anonymised data for testing or demonstration purposes)."@en.
+fresh:MockSampleAvailable rdf:type owl:Class;
+                        dc:identifier "E-138"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:MockSample
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:boolean];
+                            
+;                    dc:title "Un échantillon fictif du jeu de données est-il disponible ?"@fr, "A mock sample is it available ?"@en;
+                    dc:description "Indique si un échantillon fictif du jeu de données est disponible"@fr, "Indicate whether a synthetic sample of the dataset is available."@en.
+fresh:MockSampleLocation rdf:type owl:Class;
+                        dc:identifier "E-139"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:MockSample
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Lien vers l'échantillon fictif ou vers les renseignements pour y accéder"@fr, "Link to the sample of to information on how to access it"@en;
+                    dc:description "Si un échantillon fictif est disponible, fournir un lien ou des précisions pour y accéder."@fr, "If a synthetic sample is available, provide a link or details on how to access it."@en.
+fresh:OtherDocumentation rdf:type owl:Class;
+                        dc:identifier "E-144"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataAccess
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Documentation complémentaire sur les données"@fr, "Additional documentation on data"@en;
+                    dc:description "Tout autre document utile pour comprendre et réutiliser les données (protocoles de collecte, guides de codage, procédures de nettoyage, métadonnées complémentaires)"@fr, "Any other document useful for understanding and reusing the data (collection protocols, coding guides, cleaning procedures, additional metadata)"@en.
+fresh:DatasetPID rdf:type owl:Class;
+                        dc:identifier "S-059"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataAccess
+
+;                    dc:title "Identification pérenne du jeu de données "@fr, "Persistent identifier of the dataset"@en;
+                    dc:description "Identifiant unique et stable permettant de référencer durablement le jeu de données, indépendamment de son emplacement technique"@fr, "A unique and stable identifier that allows the dataset to be referenced permanently, regardless of its technical location."@en.
+fresh:DatasetPIDSchema rdf:type owl:Class;
+                        dc:identifier "E-147"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DatasetPID
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:DatasetPIDSchema];
+                            
+;                    dc:title "Type d'identifiant du jeu de données"@fr, "Identifier type of the dataset"@en;
+                    dc:description "Type de l’identifiant pérenne utilisé"@fr, "Type of persistent identifier used"@en.
+fresh:URI rdf:type owl:Class;
+                        dc:identifier "E-146"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DatasetPID
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Identifiant du jeu de données"@fr, "Dataset identifier"@en;
+                    dc:description "Code ou référence unique permettant d’identifier et de retrouver le jeu de données. Il peut être attribué par le producteur ou par l’hébergeur des données, ou correspondre à un identifiant persistant international (ex. DOI)."@fr, "Unique code or reference used to identify and locate the dataset. It may be assigned by the data producer or the data host, or correspond to an international persistent identifier (e.g., DOI)."@en.
+fresh:RelatedDocument rdf:type owl:Class;
+                        dc:identifier "S-060"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:DataCollectionAccess
+
+;                    dc:title "Documents connexes"@fr, "Related documents"@en;
+                    dc:description "Dans cette section, vous pouvez signaler tout document pertinent relatif à l’étude et accessible sur le web. Il peut s’agir de protocoles, publications, rapports ou tout autre document utile pour mieux comprendre l’étude ou ses résultats."@fr, "In this section, you can report any relevant documents related to the study available on the web. These may include protocols, publications, reports, or any other documents that are useful for better understanding the study or its results."@en.
+fresh:DocumentType rdf:type owl:Class;
+                        dc:identifier "E-193"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:RelatedDocument
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasValue;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onClass tfo:DocumentType];
+                            
+;                    dc:title "Type de document"@fr, "Document type"@en;
+                    dc:description "Type du document connexe"@fr, "Type of related document"@en.
+fresh:DocumentTitle rdf:type owl:Class;
+                        dc:identifier "E-194"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:RelatedDocument
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Titre du document"@fr, "Document title"@en.
+fresh:DocumentLink rdf:type owl:Class;
+                        dc:identifier "E-195"^^xsd:anyURI;
+                        rdfs:subClassOf fresh:RelatedDocument
+
+,
+                                    [rdf:type owl:Restriction;
+                                    owl:onProperty fresh:hasDatatype;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+                                    owl:onDataRange xsd:string];
+                            
+;                    dc:title "Lien vers le document"@fr, "Document link"@en;
+                    dc:description "Lien permettant d’accéder au document"@fr, "Link to access the document"@en.
 
 ###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
