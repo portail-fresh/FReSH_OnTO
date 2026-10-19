@@ -11,6 +11,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix term: <https://purl.org/fresh/terminologies/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix fresh: <https://purl.org/fresh/FReSH_OnTO#> .
 @prefix vocab: <https://portail-fresh.fr/vocab/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -26,6 +27,7 @@
                                      dcterms:description "Représentation ontologique du schéma de métadonnées FReSH"@fr ;
                                      dcterms:license <https://creativecommons.org/licenses/by-nc-sa/4.0/> ;
                                      dcterms:title "FReSH_OnTO" ;
+                                     vann:preferredNamespacePrefix "fresh" ;
                                      <http://schema.org/image> "https://raw.githubusercontent.com/portail-fresh/technical-documentation/refs/heads/main/site/assets/logocouleur.jpg" .
 
 #################################################################
@@ -69,7 +71,7 @@ pav:lastUpdatedOn rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/vocab/vann/preferredNamespacePrefix
-<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
 
 
 ###  http://schema.org/image

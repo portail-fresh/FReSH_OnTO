@@ -1,0 +1,60 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+    @prefix dc: <http://purl.org/dc/elements/1.1/> .
+    @prefix eur: <http://data.europa.eu/8mn/euroscivoc/> .
+    @prefix fresh: <https://purl.org/fresh/FReSH_OnTO#> .
+    @prefix term: <https://purl.org/fresh/terminologies/> .
+    @prefix mesh: <http://id.nlm.nih.gov/mesh/> .
+    @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+    @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+    @prefix vocab: <https://portail-fresh.fr/vocab/> .
+    @prefix owl: <http://www.w3.org/2002/07/owl#> .
+    @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+    @prefix pav: <http://purl.org/pav/> .
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+    @prefix tfo: <https://purl.org/fresh/Termino_FReSH_OnTO#> .
+
+    fresh:terminologies rdf:type owl:Class .
+
+
+    tfo:AllocationMode rdf:type owl:Class ;
+        rdfs:subClassOf fresh:terminologies ;
+        dcterms:identifier term:FAM ;
+        dcterms:title 'Mode d\'allocation'@fr , 'Allocation Mode'@en ;
+        dcterms:description 'Concepts utilisés pour décrire le champ AllocationMode du schéma de métadonnées FReSH.'@fr , 'Terms used to describe the field AllocationMode in the FReSH metadata schema.'@en ;
+        dcterms:creator fresh: ;
+        pav:createdOn "2026-01-05"^^xsd:date ;
+        pav:lastUpdatedOn '2026-04-07' ;
+
+
+    
+ 
+        fresh:metadataConcerned 'AllocationMode';
+
+
+        
+ 
+        dcterms:license 'https://creativecommons.org/licenses/by-nc-sa/4.0/' .
+
+
+            
+        tfo:FAM4362 rdf:type owl:NamedIndividual, tfo:AllocationMode ;
+            skos:prefLabel 'Randomisée'@fr , 'Randomised'@en ;
+            dc:title 'Randomisée'@fr , 'Randomised'@en ;
+        
+
+            skos:definition 'Participants assignés à différents groupes d’étude de manière aléatoire.'@fr, 'Participants assigned to different study groups at random.'@en ;
+        
+
+        dcterms:identifier 'FAM4362' .
+    
+
+        tfo:FAM7297 rdf:type owl:NamedIndividual, tfo:AllocationMode ;
+            skos:prefLabel 'Non randomisée'@fr , 'Nonrandomised'@en ;
+            dc:title 'Non randomisée'@fr , 'Nonrandomised'@en ;
+        
+
+            skos:definition 'Participants assignés à différents groupes d’étude selon un critère déterminé ou choisi, et non de façon aléatoire.'@fr, 'Participants assigned to different study groups according to a specific or chosen criterion, rather than at random.'@en ;
+        
+
+        dcterms:identifier 'FAM7297' .
+    

@@ -1,0 +1,82 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+    @prefix dc: <http://purl.org/dc/elements/1.1/> .
+    @prefix eur: <http://data.europa.eu/8mn/euroscivoc/> .
+    @prefix fresh: <https://purl.org/fresh/FReSH_OnTO#> .
+    @prefix term: <https://purl.org/fresh/terminologies/> .
+    @prefix mesh: <http://id.nlm.nih.gov/mesh/> .
+    @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+    @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+    @prefix vocab: <https://portail-fresh.fr/vocab/> .
+    @prefix owl: <http://www.w3.org/2002/07/owl#> .
+    @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+    @prefix pav: <http://purl.org/pav/> .
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+    @prefix tfo: <https://purl.org/fresh/Termino_FReSH_OnTO#> .
+
+    fresh:terminologies rdf:type owl:Class .
+
+
+    tfo:BlindedMaskingDetails rdf:type owl:Class ;
+        rdfs:subClassOf fresh:terminologies ;
+        dcterms:identifier term:FBM ;
+        dcterms:title 'Groupe avec insu'@fr , 'Blinded Masking Details'@en ;
+        dcterms:description 'Concepts utilisés pour décrire le champ BlindedMaskingDetails du schéma de métadonnées FReSH.'@fr , 'Terms used to describe the field BlindedMaskingDetails in the FReSH metadata schema.'@en ;
+        dcterms:creator fresh: ;
+        pav:createdOn "2026-01-05"^^xsd:date ;
+        pav:lastUpdatedOn '2026-04-07' ;
+
+
+    
+ 
+        fresh:metadataConcerned 'BlindedMaskingDetails';
+
+
+        
+ 
+        dcterms:license 'https://creativecommons.org/licenses/by-nc-sa/4.0/' .
+
+
+            
+        tfo:FBM7367 rdf:type owl:NamedIndividual, tfo:BlindedMaskingDetails ;
+            skos:prefLabel 'Participant'@fr , 'Participant'@en ;
+            dc:title 'Participant'@fr , 'Participant'@en ;
+        
+
+            skos:definition 'Personne incluse à l’étude et recevant ou pouvant recevoir l’intervention.'@fr, 'An individual enrolled in the study who receives or may receive the intervention.'@en ;
+        
+
+        dcterms:identifier 'FBM7367' .
+    
+
+        tfo:FBM7804 rdf:type owl:NamedIndividual, tfo:BlindedMaskingDetails ;
+            skos:prefLabel 'Personnel soignant'@fr , 'Care provider'@en ;
+            dc:title 'Personnel soignant'@fr , 'Care provider'@en ;
+        
+
+            skos:definition 'Professionnel de santé délivrant l’intervention ou les soins standards aux participants.'@fr, 'A health professional who delivers the intervention or standard care to participants.'@en ;
+        
+
+        dcterms:identifier 'FBM7804' .
+    
+
+        tfo:FBM7912 rdf:type owl:NamedIndividual, tfo:BlindedMaskingDetails ;
+            skos:prefLabel 'Membre de l\'équipe de recherche'@fr , 'Research Team Member'@en ;
+            dc:title 'Membre de l\'équipe de recherche'@fr , 'Research Team Member'@en ;
+        
+
+            skos:definition 'Personne impliquée dans la conduite de l’étude (investigateurs, coordinateurs, personnel d’étude, etc.).'@fr, 'A person involved in conducting the study, such as investigators, coordinators, or study staff.'@en ;
+        
+
+        dcterms:identifier 'FBM7912' .
+    
+
+        tfo:FBM4651 rdf:type owl:NamedIndividual, tfo:BlindedMaskingDetails ;
+            skos:prefLabel 'Evaluateur des résultats'@fr , 'Outcomes Assessor'@en ;
+            dc:title 'Evaluateur des résultats'@fr , 'Outcomes Assessor'@en ;
+        
+
+            skos:definition 'Personne chargée d’évaluer le(s) résultat(s) de l’étude.'@fr, 'The individual who evaluates the outcome(s) of interest.'@en ;
+        
+
+        dcterms:identifier 'FBM4651' .
+    
