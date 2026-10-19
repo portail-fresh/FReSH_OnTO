@@ -1,0 +1,93 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+    @prefix dc: <http://purl.org/dc/elements/1.1/> .
+    @prefix eur: <http://data.europa.eu/8mn/euroscivoc/> .
+    @prefix fresh: <https://purl.org/fresh/FReSH_OnTO#> .
+    @prefix term: <https://purl.org/fresh/terminologies/> .
+    @prefix mesh: <http://id.nlm.nih.gov/mesh/> .
+    @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+    @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+    @prefix vocab: <https://portail-fresh.fr/vocab/> .
+    @prefix owl: <http://www.w3.org/2002/07/owl#> .
+    @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+    @prefix pav: <http://purl.org/pav/> .
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+    @prefix tfo: <https://purl.org/fresh/Termino_FReSH_OnTO#> .
+
+    fresh:terminologies rdf:type owl:Class .
+
+
+    tfo:TrialPhase rdf:type owl:Class ;
+        rdfs:subClassOf fresh:terminologies ;
+        dcterms:identifier term:FTR ;
+        dcterms:title 'Phase de l\'essai'@fr , 'Trial Phase'@en ;
+        dcterms:description 'Concepts utilisés pour décrire le champ TrialPhase du schéma de métadonnées FReSH.'@fr , 'Terms used to describe the field TrialPhase in the FReSH metadata schema.'@en ;
+        dcterms:creator fresh: ;
+        pav:createdOn "2026-01-05"^^xsd:date ;
+        pav:lastUpdatedOn '2026-04-07' ;
+
+
+    
+ 
+        fresh:metadataConcerned 'TrialPhase';
+
+
+        
+ 
+        dcterms:license 'https://creativecommons.org/licenses/by-nc-sa/4.0/' .
+
+
+            
+        tfo:FTR6479 rdf:type owl:NamedIndividual, tfo:TrialPhase ;
+            skos:prefLabel 'Phase 1'@fr , 'Phase 1'@en ;
+            dc:title 'Phase 1'@fr , 'Phase 1'@en ;
+        
+
+            skos:definition 'Evaluation de la sécurité et de la tolérance d’un nouveau traitement chez un petit nombre de volontaires sains ou de patients'@fr, 'Assessment of safety and tolerability of a new treatment in a small number of healthy volunteers or patients.'@en ;
+        
+
+        dcterms:identifier 'FTR6479' .
+    
+
+        tfo:FTR6916 rdf:type owl:NamedIndividual, tfo:TrialPhase ;
+            skos:prefLabel 'Phase 2'@fr , 'Phase 2'@en ;
+            dc:title 'Phase 2'@fr , 'Phase 2'@en ;
+        
+
+            skos:definition 'Evaluation de l’efficacité et du profil de sécurité d’un traitement chez un groupe limité de patients.'@fr, 'Evaluation of efficacy and safety profile of a treatment in a limited group of patients.'@en ;
+        
+
+        dcterms:identifier 'FTR6916' .
+    
+
+        tfo:FTR5268 rdf:type owl:NamedIndividual, tfo:TrialPhase ;
+            skos:prefLabel 'Phase 3'@fr , 'Phase 3'@en ;
+            dc:title 'Phase 3'@fr , 'Phase 3'@en ;
+        
+
+            skos:definition 'Confirmation de l’efficacité et surveillance de la sécurité sur un grand nombre de patients, souvent pour obtenir l’autorisation de mise sur le marché.'@fr, 'Confirmation of efficacy and monitoring of safety in a large patient population, often to obtain marketing authorization.'@en ;
+        
+
+        dcterms:identifier 'FTR5268' .
+    
+
+        tfo:FTR3851 rdf:type owl:NamedIndividual, tfo:TrialPhase ;
+            skos:prefLabel 'Phase 4'@fr , 'Phase 4'@en ;
+            dc:title 'Phase 4'@fr , 'Phase 4'@en ;
+        
+
+            skos:definition 'Suivi post-commercialisation pour détecter des effets indésirables rares et évaluer l’usage réel du traitement.'@fr, 'Post-marketing surveillance to detect rare adverse effects and assess real-world use of the treatment.'@en ;
+        
+
+        dcterms:identifier 'FTR3851' .
+    
+
+        tfo:FTR8897 rdf:type owl:NamedIndividual, tfo:TrialPhase ;
+            skos:prefLabel 'nan'@fr , 'nan'@en ;
+            dc:title 'nan'@fr , 'nan'@en ;
+        
+
+            skos:definition 'Non applicable'@fr, 'Not applicable'@en ;
+        
+
+        dcterms:identifier 'FTR8897' .
+    

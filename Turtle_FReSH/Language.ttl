@@ -1,0 +1,59 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+    @prefix dc: <http://purl.org/dc/elements/1.1/> .
+    @prefix eur: <http://data.europa.eu/8mn/euroscivoc/> .
+    @prefix fresh: <https://purl.org/fresh/FReSH_OnTO#> .
+    @prefix term: <https://purl.org/fresh/terminologies/> .
+    @prefix mesh: <http://id.nlm.nih.gov/mesh/> .
+    @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+    @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+    @prefix vocab: <https://portail-fresh.fr/vocab/> .
+    @prefix owl: <http://www.w3.org/2002/07/owl#> .
+    @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+    @prefix pav: <http://purl.org/pav/> .
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+    @prefix tfo: <https://purl.org/fresh/Termino_FReSH_OnTO#> .
+
+    fresh:terminologies rdf:type owl:Class .
+
+
+    tfo:Language rdf:type owl:Class ;
+        rdfs:subClassOf fresh:terminologies ;
+        dcterms:identifier term:FLG ;
+        dcterms:title 'Langue'@fr , 'Language'@en ;
+        dcterms:description 'Concepts utilisés pour décrire les champs OriginLang et VersionLang du schéma de métadonnées FReSH.'@fr , 'Terms used to describe the fields OriginLang and VersionLang in the FReSH metadata schema.'@en ;
+        dcterms:creator fresh: ;
+        pav:createdOn "2026-01-05"^^xsd:date ;
+        pav:lastUpdatedOn '2026-04-07' ;
+
+
+    
+ 
+        fresh:metadataConcerned 'OriginLang';
+
+
+            
+ 
+        fresh:metadataConcerned 'VersionLang';
+
+
+            
+ 
+        dcterms:license 'https://creativecommons.org/licenses/by-nc-sa/4.0/' .
+
+
+            
+        tfo:FLG5933 rdf:type owl:NamedIndividual, tfo:Language ;
+            skos:prefLabel 'Français'@fr , 'French'@en ;
+            dc:title 'Français'@fr , 'French'@en ;
+        
+
+        dcterms:identifier 'FLG5933' .
+    
+
+        tfo:FLG9023 rdf:type owl:NamedIndividual, tfo:Language ;
+            skos:prefLabel 'Anglais'@fr , 'English'@en ;
+            dc:title 'Anglais'@fr , 'English'@en ;
+        
+
+        dcterms:identifier 'FLG9023' .
+    

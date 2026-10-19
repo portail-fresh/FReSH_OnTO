@@ -1,0 +1,82 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+    @prefix dc: <http://purl.org/dc/elements/1.1/> .
+    @prefix eur: <http://data.europa.eu/8mn/euroscivoc/> .
+    @prefix fresh: <https://purl.org/fresh/FReSH_OnTO#> .
+    @prefix term: <https://purl.org/fresh/terminologies/> .
+    @prefix mesh: <http://id.nlm.nih.gov/mesh/> .
+    @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+    @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+    @prefix vocab: <https://portail-fresh.fr/vocab/> .
+    @prefix owl: <http://www.w3.org/2002/07/owl#> .
+    @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+    @prefix pav: <http://purl.org/pav/> .
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+    @prefix tfo: <https://purl.org/fresh/Termino_FReSH_OnTO#> .
+
+    fresh:terminologies rdf:type owl:Class .
+
+
+    tfo:PopulationType rdf:type owl:Class ;
+        rdfs:subClassOf fresh:terminologies ;
+        dcterms:identifier term:FPT ;
+        dcterms:title 'Type de population'@fr , 'Population Type'@en ;
+        dcterms:description 'Concepts utilisés pour décrire le champ PopulationType du schéma de métadonnées FReSH.'@fr , 'Terms used to describe the field PopulationType in the FReSH metadata schema.'@en ;
+        dcterms:creator fresh: ;
+        pav:createdOn "2026-01-05"^^xsd:date ;
+        pav:lastUpdatedOn '2026-04-07' ;
+
+
+    
+ 
+        fresh:metadataConcerned 'PopulationType';
+
+
+        
+ 
+        dcterms:license 'https://creativecommons.org/licenses/by-nc-sa/4.0/' .
+
+
+            
+        tfo:FPT2781 rdf:type owl:NamedIndividual, tfo:PopulationType ;
+            skos:prefLabel 'Population générale'@fr , 'General population'@en ;
+            dc:title 'Population générale'@fr , 'General population'@en ;
+        
+
+            skos:definition 'Ensemble des individus d\'un territoire donné, indépendamment de leur état de santé ou de leur recours aux soins.'@fr, 'All individuals in a given area, regardless of their state of health or their use of healthcare.'@en ;
+        
+
+        dcterms:identifier 'FPT2781' .
+    
+
+        tfo:FPT4254 rdf:type owl:NamedIndividual, tfo:PopulationType ;
+            skos:prefLabel 'Patients'@fr , 'Patients population'@en ;
+            dc:title 'Patients'@fr , 'Patients population'@en ;
+        
+
+            skos:definition 'Personnes ayant reçu un diagnostic médical et faisant l’objet d’un suivi ou d’une prise en charge dans le cadre du système de soins, qu’il soit ambulatoire ou hospitalier.'@fr, 'People who have received a medical diagnosis and are subject to follow-up or care within the healthcare system, whether outpatient or inpatient.'@en ;
+        
+
+        dcterms:identifier 'FPT4254' .
+    
+
+        tfo:FPT5451 rdf:type owl:NamedIndividual, tfo:PopulationType ;
+            skos:prefLabel 'Personnes en situation de handicap'@fr , 'People with disabilities'@en ;
+            dc:title 'Personnes en situation de handicap'@fr , 'People with disabilities'@en ;
+        
+
+            skos:definition 'Personnes qui présentent des incapacités physiques, mentales, intellectuelles ou sensorielles durables qui limitent leur activité ou restreignent leur participation à la vie en société participation sur la base de l’égalité avec les autres.'@fr, 'Individuals with long-term physical, mental, intellectual, or sensory disabilities that limit their activity or restrict their participation in society on an equal basis with others.'@en ;
+        
+
+        dcterms:identifier 'FPT5451' .
+    
+
+        tfo:FPT7356 rdf:type owl:NamedIndividual, tfo:PopulationType ;
+            skos:prefLabel 'Autre'@fr , 'Other'@en ;
+            dc:title 'Autre'@fr , 'Other'@en ;
+        
+
+            skos:definition 'À utiliser lorsque le type de population est connu, mais introuvable dans la liste.'@fr, 'Use when the population type is known but cannot be found in the list.'@en ;
+        
+
+        dcterms:identifier 'FPT7356' .
+    

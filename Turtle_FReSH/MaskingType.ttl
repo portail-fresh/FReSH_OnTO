@@ -1,0 +1,60 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+    @prefix dc: <http://purl.org/dc/elements/1.1/> .
+    @prefix eur: <http://data.europa.eu/8mn/euroscivoc/> .
+    @prefix fresh: <https://purl.org/fresh/FReSH_OnTO#> .
+    @prefix term: <https://purl.org/fresh/terminologies/> .
+    @prefix mesh: <http://id.nlm.nih.gov/mesh/> .
+    @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+    @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+    @prefix vocab: <https://portail-fresh.fr/vocab/> .
+    @prefix owl: <http://www.w3.org/2002/07/owl#> .
+    @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+    @prefix pav: <http://purl.org/pav/> .
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+    @prefix tfo: <https://purl.org/fresh/Termino_FReSH_OnTO#> .
+
+    fresh:terminologies rdf:type owl:Class .
+
+
+    tfo:MaskingType rdf:type owl:Class ;
+        rdfs:subClassOf fresh:terminologies ;
+        dcterms:identifier term:FMT ;
+        dcterms:title 'Type d\'insu'@fr , 'Masking Type'@en ;
+        dcterms:description 'Concepts utilisés pour décrire le champ MaskingType du schéma de métadonnées FReSH.'@fr , 'Terms used to describe the field MaskingType in the FReSH metadata schema.'@en ;
+        dcterms:creator fresh: ;
+        pav:createdOn "2026-01-05"^^xsd:date ;
+        pav:lastUpdatedOn '2026-04-07' ;
+
+
+    
+ 
+        fresh:metadataConcerned 'MaskingType';
+
+
+        
+ 
+        dcterms:license 'https://creativecommons.org/licenses/by-nc-sa/4.0/' .
+
+
+            
+        tfo:FMT3704 rdf:type owl:NamedIndividual, tfo:MaskingType ;
+            skos:prefLabel 'Avec insu (en aveugle)'@fr , 'Blinded'@en ;
+            dc:title 'Avec insu (en aveugle)'@fr , 'Blinded'@en ;
+        
+
+            skos:definition 'Au moins une partie est tenue dans l\'ignorance de l\'intervention attribuée.'@fr, 'At least one party is unaware of the assigned intervention.'@en ;
+        
+
+        dcterms:identifier 'FMT3704' .
+    
+
+        tfo:FMT5335 rdf:type owl:NamedIndividual, tfo:MaskingType ;
+            skos:prefLabel 'Ouvert'@fr , 'Open label'@en ;
+            dc:title 'Ouvert'@fr , 'Open label'@en ;
+        
+
+            skos:definition 'Toutes les parties connaissent l\'intervention attribuée.'@fr, 'All parties know the assigned intervention.'@en ;
+        
+
+        dcterms:identifier 'FMT5335' .
+    
