@@ -1,0 +1,88 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+    @prefix dc: <http://purl.org/dc/elements/1.1/> .
+    @prefix eur: <http://data.europa.eu/8mn/euroscivoc/> .
+    @prefix fresh: <https://purl.org/fresh/FReSH_OnTO#> .
+    @prefix term: <https://purl.org/fresh/terminologies/> .
+    @prefix mesh: <http://id.nlm.nih.gov/mesh/> .
+    @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+    @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+    @prefix vocab: <https://portail-fresh.fr/vocab/> .
+    @prefix owl: <http://www.w3.org/2002/07/owl#> .
+    @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+    @prefix pav: <http://purl.org/pav/> .
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+    @prefix tfo: <https://purl.org/fresh/Termino_FReSH_OnTO#> .
+
+<https://purl.org/fresh/Termino_FReSH_OnTO> a owl:Ontology ;
+    owl:imports <http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/Age.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/AllocationMode.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/AllocationUnit.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/ArmType.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/AutorisationAgency.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/BiobankContent.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/BlindedMaskingDetails.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/CollectionMode.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/ConformityDeclaration.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/DatasetPIDSchema.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/Datatype.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/DocumentType.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/FollowUpMode.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/FranceRegions.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/HealthDeterminant.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/HealthTheme.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/IndividualDataAccess.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/InterventionnalStudyModel.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/InterventionType.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/Language.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/MaskingType.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/ObservationalStudy.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/OrganisationType.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/PIDSchema.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/PlannedSampleSize.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/PopulationType.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/Provenance.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/RecruitmentSource.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/RecrutementTiming.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/ResearchPurpose.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/ResearchType.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/SamplingMode.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/Sex.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/SourcePurpose.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/SourceType.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/Status.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/StudyStatus.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/TrialPhase.ttl> , <file:/C:/Users/andrea.blivet/Prog/Ontologie/FReSH/Data/Vocabulaires/Turtle_FReSH/CollectionUnit.ttl> ;
+    dcterms:contributor "andrea.blivet" ;
+    dcterms:created "2026-07-24"^^xsd:date ;
+    dcterms:creator <https://purl.org/fresh/> ;
+    dcterms:description "Représentation ontologique des vocabulaires contrôlés du schéme de métadonnées FReSH"@fr ;
+    dcterms:license <https://creativecommons.org/licenses/by-nc-sa/4.0/> ;
+    dcterms:title "Termino_FReSH_OnTO" ;
+    <http://schema.org/image> "https://raw.githubusercontent.com/portail-fresh/technical-documentation/refs/heads/main/site/assets/logocouleur.jpg" .
+
+dc:title a owl:AnnotationProperty .
+
+dcterms:contributor a owl:AnnotationProperty .
+
+dcterms:created a owl:AnnotationProperty .
+
+dcterms:creator a owl:AnnotationProperty .
+
+dcterms:description a owl:AnnotationProperty .
+
+dcterms:identifier a owl:AnnotationProperty .
+
+dcterms:license a owl:AnnotationProperty .
+
+dcterms:title a owl:AnnotationProperty .
+
+<http://purl.org/pav/createdOn> a owl:AnnotationProperty .
+
+<http://purl.org/pav/lastUpdatedOn> a owl:AnnotationProperty .
+
+<http://purl.org/vocab/vann/preferredNamespacePrefix> a owl:AnnotationProperty .
+
+<http://schema.org/image> a owl:AnnotationProperty .
+
+<http://www.w3.org/2004/02/skos/core#broadMatch> a owl:AnnotationProperty .
+
+<http://www.w3.org/2004/02/skos/core#closeMatch> a owl:AnnotationProperty .
+
+<http://www.w3.org/2004/02/skos/core#definition> a owl:AnnotationProperty .
+
+<http://www.w3.org/2004/02/skos/core#exactMatch> a owl:AnnotationProperty .
+
+<http://www.w3.org/2004/02/skos/core#narrowMatch> a owl:AnnotationProperty .
+
+<http://www.w3.org/2004/02/skos/core#prefLabel> a owl:AnnotationProperty .
+
+<http://www.w3.org/2004/02/skos/core#relatedMatch> a owl:AnnotationProperty .
+
+<http://xmlns.com/foaf/0.1/logo> a owl:AnnotationProperty .
+
+<metadataConcerned> a owl:AnnotationProperty .
+
+<FReSH_OnTO#metadataConcerned> a owl:AnnotationProperty .
+
+xsd:date a rdfs:Datatype .
+fresh:terminologies rdf:type owl:Class .
+tfo:ICD11 rdf:type owl:Class ;
+    rdfs:subClassOf fresh:terminologies ;
+    dcterms:identifier <https://icd.who.int/browse/2026-01/mms/en> ;
+    dcterms:title 'CIM-11'@fr , 'ICD-11'@en ;
+    dcterms:description 'Concepts utilisés pour décrire le champ Pathology du schéma de métadonnées FReSH.'@fr , 'Terms used to describe the field Pathology in the FReSH metadata schema.'@en ;
+    dcterms:creator <https://icd.who.int/> ;
+    fresh:metadataConcerned 'Pathology';
+    dcterms:license 'https://creativecommons.org/licenses/by-nc-sa/4.0/' .
+
+tfo:ISO3166 rdf:type owl:Class ;
+    rdfs:subClassOf fresh:terminologies ;
+    dcterms:identifier <https://www.iso.org/fr/iso-3166-country-codes.html> ;
+    dcterms:title 'Pays'@fr , 'Countries'@en ;
+    dcterms:description 'Liste des pays ISO3166 pour décrire le champ Nation du schéma de métadonnées FReSH.'@fr , 'Countries list by ISO3166 to describe the field Nation in the FReSH metadata schema.'@en ;
+    dcterms:creator <https://www.iso.org/> ;
+    fresh:metadataConcerned 'Nation';
+    dcterms:license 'https://creativecommons.org/licenses/by-nc-sa/4.0/' .
